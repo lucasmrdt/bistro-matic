@@ -5,11 +5,12 @@
 ## file
 ##
 
-DIR_COMPUTE_FCT	=	../src/operation
+DIR_SRC	=	../src
 
 SRC	=	main.c	\
-		$(DIR_COMPUTE_FCT)/addinf.c	\
-		$(DIR_COMPUTE_FCT)/subinf.c
+		$(DIR_SRC)/compute/addinf.c	\
+		$(DIR_SRC)/compute/subinf.c	\
+		$(DIR_SRC)/initialize.c
 
 OBJ	=	$(SRC:.c=.o)
 

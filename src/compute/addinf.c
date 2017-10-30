@@ -7,6 +7,7 @@
 
 #include <stdlib.h>
 #include "my.h"
+#include "bistromatic.h"
 
 int	r_addinf(char *s1, char *s2, char *result, int rest);
 
@@ -26,10 +27,11 @@ char	*addinf(char *s1, char *s2)
 
 int	r_addinf(char *s1, char *s2, char *result, int rest)
 {
-	unsigned int	n1 = (*s1 ? *s1 - 48 : 0);
-	unsigned int	n2 = (*s2 ? *s2 - 48 : 0);
-	unsigned int	res_sum = n1 + n2 + rest;
-	unsigned int	unit = res_sum % 10;
+	int	base_length = my_strlen(BASE);
+	int	n1 = (*s1 ? indexof(*s1, BASE) + 1 : 0);
+	int	n2 = (*s2 ? indexof(*s2, BASE) + 1 : 0);
+	int	res_sum = n1 + n2 + rest;
+	int	unit = res_sum % base_length;
 
 	if (!*s1 && !*s2 && !rest){
 		*result = '\0';
@@ -39,7 +41,7 @@ int	r_addinf(char *s1, char *s2, char *result, int rest)
 		s1++;
 	if (*s2)
 		s2++;
-	rest = res_sum / 10 % 10;
-	*result = unit + 48;
+	rest = res_sum / 10 % base_length;
+	*result = BASE[unit];
 	return (r_addinf(s1, s2, ++result, rest));
 }

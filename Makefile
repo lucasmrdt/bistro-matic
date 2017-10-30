@@ -30,8 +30,10 @@ all:			$(NAME_PRG)
 
 clean:
 		rm -f $(OBJ_PRG) $(OBJ_TEST)
+		$(MAKE) fclean -C tests
 
 fclean:			clean
 		rm -f $(NAME_PRG) $(NAME_TEST)
+		$(MAKE) clean
 
 re:			fclean all

@@ -30,17 +30,16 @@ char	*divinf(char *s1, char *s2);
 char	*modinf(char *s1, char *s2);
 
 /* initialize */
-int	initialize(linked_nb_t **stack_nb, linked_op_t **stack_op);
-int	initialize_stacks(linked_nb_t **stack_nb, linked_op_t **stack_op);
-int	initialize_global_var(void);
+int	initialize(linked_nb_t **STACK_NB, linked_op_t **STACK_OP, char *ops, char *base);
+int	initialize_stacks(linked_nb_t **STACK_NB, linked_op_t **STACK_OP);
+int	initialize_global_var(char *ops, char *base);
 
 /* evalexpr */
 int	evalexpr(char *str);
-int	compute_priority(linked_nb_t **stack_nb, linked_op_t **stack_op,
-	char op);
-int	add_number(linked_nb_t **stack_nb, int nb);
-int	add_op(linked_op_t **stack_op, char op, int weight);
-void	compute(linked_nb_t **stack_nb, linked_op_t **stack_op);
+int	compute_priority(char op);
+int	add_number(int nb);
+int	add_op(char op, int weight);
+void	compute(void);
 
 /* tools */
 int	is_negative_number(char *str);
@@ -49,7 +48,8 @@ int	get_weight(char op);
 int	get_number(char **str);
 
 /* global variables */
-extern	char	*ops;
-extern	pfunc_t	compute_arr[];
+extern	char	*OPS;
+extern	char	*BASE;
+extern	pfunc_t	COMPUTE_ARR[];
 
 #endif /* !BISTROMATIC_H_ */

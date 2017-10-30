@@ -5,11 +5,14 @@
 ## file
 ##
 
-SRC	=	my_putstr.c			\
-		my_putchar.c			\
-		my_strlen.c			\
-		my_getnbr.c			\
-		my_revstr.c
+SRC	=	my_putstr.c	\
+		my_putchar.c	\
+		my_strlen.c	\
+		my_getnbr.c	\
+		my_revstr.c	\
+		my_strdup.c	\
+		my_strcpy.c	\
+		indexof.c
 
 OBJ	=	$(SRC:.c=.o)
 
