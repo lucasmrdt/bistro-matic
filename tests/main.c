@@ -19,9 +19,9 @@ int	main(int ac, char **av)
 	int	i = -1;
 
 	(void)(ac);
-	initialize_global_var("()+-*/\%", "0123456789");
+	initialize_global_var("()+-*/\%", "ZBC");
 	while(!test_str(arr_name_func[++i], av[1]));
-	(COMPUTE_ARR[i])(av[2], av[3]);
+	printf("%s\n", (COMPUTE_ARR[i])(av[2], av[3]));
 }
 
 int	test_str(char *s1, char *s2)
