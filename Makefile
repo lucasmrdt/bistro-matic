@@ -2,7 +2,7 @@
 ## EPITECH PROJECT, 2017
 ## Makefile
 ## File description:
-## 
+## file
 ##
 
 ## SOURCES
@@ -22,7 +22,7 @@ NAME_PRG	=	infinadd
 
 $(NAME_PRG)	:	$(OBJ_PRG)
 		$(MAKE) -C lib/my
-		gcc -o $(NAME_PRG) $(OBJ_PRG) $(LDFLAGS)
+		$(CC) -o $(NAME_PRG) $(OBJ_PRG) $(LDFLAGS)
 		$(MAKE) clean
 
 

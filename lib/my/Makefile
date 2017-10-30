@@ -1,0 +1,35 @@
+##
+## EPITECH PROJECT, 2017
+## MAKEFILE
+## File description:
+## file
+##
+
+SRC	=	my_putstr.c			\
+		my_putchar.c			\
+		my_strlen.c			\
+		my_getnbr.c			\
+		my_revstr.c
+
+OBJ	=	$(SRC:.c=.o)
+
+CFLAGS	=	-Wall -Wextra -lgcov
+
+CC	=	gcc
+
+NAME	=	libmy.a
+
+
+$(NAME):	$(OBJ)
+		ar rc $(NAME) $(OBJ)
+		$(MAKE) clean
+
+all:		$(NAME)
+
+clean:
+		rm -f $(OBJ)
+
+fclean:		clean
+		rm -f $(NAME)
+
+re:		fclean all
