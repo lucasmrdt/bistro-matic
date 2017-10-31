@@ -1,3 +1,0 @@
-#!/bin/bash
-make -Cs js_tests/compute_tests
-node js_tests/compute_tests/subinf.js

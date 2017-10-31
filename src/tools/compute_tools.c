@@ -18,9 +18,15 @@ int	get_weight(char op)
 	return (0);
 }
 
-char	*compute_with_signs(char op, char *result_sign)
+void	set_bigger_first(linked_nb_t **elem1, linked_nb_t **elem2)
 {
-	char	*result;
+	char	*s1 = (*elem1)->value;
+	char	*s2 = (*elem2)->value;
+	void	*tmp;
 
-	while ()
+	if (str_cmp(s1, s2) < 0) {
+		tmp = *elem1;
+		*elem1 = *elem2;
+		*elem2 = tmp;
+	}
 }

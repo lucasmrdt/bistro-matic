@@ -7,7 +7,7 @@
 
 ORIGIN	=	../../..
 
-SRC	=	$(ORIGIN)/tests/js_tests/addinf/main.c	\
+SRC	=	$(ORIGIN)/tests/js_tests/subinf/main.c	\
 		$(ORIGIN)/src/compute/addinf.c		\
 		$(ORIGIN)/src/compute/subinf.c		\
 		$(ORIGIN)/src/compute/divinf.c		\

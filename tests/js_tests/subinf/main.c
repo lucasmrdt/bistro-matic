@@ -15,5 +15,5 @@ int	main(int ac, char **av)
 
 	(void)(ac);
 	initialize(ops, base);
-	printf("%s\n", addinf(av[1], av[2]));
+	printf("%s\n", subinf(av[1], av[2]));
 }

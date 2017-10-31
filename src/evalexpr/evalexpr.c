@@ -54,25 +54,17 @@ int compute_priority(char op)
 
 void	compute(void)
 {
-	void	*tmp;
-	char	*s1;
-	char	*s2;
+	void	*elem1;
+	void	*elem2;
 	char	*result;
 	char	sign;
 	int	i = -1;
 
-	tmp = STACK_NB->next;
-	s1 = STACK_NB->value;
-	free(STACK_NB->value);
-	free(STACK_NB);
-	STACK_NB = tmp;
-	tmp = STACK_NB->next;
-	s2 = STACK_NB->value;
-	free(STACK_NB->value);
-	free(STACK_NB);
+	elem1 = STACK_NB->next;
+	elem2 = STACK_NB;
 	while (ops[++i] != STACK_OP->op);
-	set_bigger_first(&s1, &s2);
-	result = pfunc_arr[i - 2](s1, s2, &sign);
+	set_bigger_first(&elem1, &elem2);
+	result = pfunc_arr[i - 2](elem1, elem2, &sign);
 	add_number(result, sign);
 	STACK_OP = tmp;
 }

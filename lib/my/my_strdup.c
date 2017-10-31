@@ -6,7 +6,9 @@
 */
 
 #include <stdlib.h>
-#include "../../include/my.h"
+
+char	*my_strcpy(char *dest, const char *src);
+int	my_strlen(char const *str);
 
 char	*my_strdup(char const *src)
 {

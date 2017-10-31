@@ -42,14 +42,14 @@ int	initialize_global_var(char *ops, char *base)
 {
 	const int	ops_length = my_strlen(ops);
 
-	BASE_LENGTH = my_strlen(BASE);
+	BASE_LENGTH = my_strlen(base);
 	if (ops_length != 7)
 		return (0);
 	OPS = malloc(sizeof(char) * ops_length);
 	if (!OPS)
 		return (0);
 	OPS = my_strdup(ops);
-	BASE = malloc(sizeof(char) * base_length);
+	BASE = malloc(sizeof(char) * BASE_LENGTH);
 	if (!BASE)
 		return (0);
 	BASE = my_strdup(base);

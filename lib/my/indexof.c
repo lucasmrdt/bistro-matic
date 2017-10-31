@@ -5,11 +5,11 @@
 ** file
 */
 
-int	indexof(char *str, char c)
+int	indexof(char *arr, char c)
 {
 	int	i = 0;
 
-	while (str[i] != c && str[i])
+	while (arr[i] != c && arr[i])
 		i++;
 	return (i);
 }

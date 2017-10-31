@@ -36,3 +36,19 @@ int	add_op(char op, int weight)
 int	next_number(void);
 
 int	next_op(void);
+
+void	free_operation()
+{
+	void	*tmp;
+
+	tmp = STACK_NB->next;
+	free(STACK_NB->value);
+	free(STACK_NB);
+	STACK_NB = tmp;
+	tmp = STACK_NB->next;
+	free(STACK_NB->value);
+	free(STACK_NB);
+	tmp = STACK_OP->next;
+	free(STACK_OP);
+	STACK_NB = tmp;
+}

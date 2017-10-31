@@ -21,21 +21,21 @@ typedef struct linked_nb {
 	struct linked_nb	*next;
 } linked_nb_t;
 
-typedef char *(*pfunc_t)(char *, char *);
+typedef char *(*pfunc_t)(linked_nb_t *, linked_nb_t *, char *);
 
 /* compute functions */
-void	subinf(char *s1, char *s2, char sign);
-void	mulinf(char *s1, char *s2, char sign);
-void	divinf(char *s1, char *s2, char sign);
-void	modinf(char *s1, char *s2, char sign);
-void	addinf(char *s1, char *s2, char sign);
+char	*addinf(char *s1, char *s2);
+char	*subinf(char *s1, char *s2);
+char	*mulinf(char *s1, char *s2);
+char	*divinf(char *s1, char *s2);
+char	*modinf(char *s1, char *s2);
 
 /* ptr functions */
-void	c_add(char *s1, char *s2);
-void	c_sub(char *s1, char *s2);
-void	c_mul(char *s1, char *s2);
-void	c_div(char *s1, char *s2);
-void	c_mod(char *s1, char *s2);
+char	*c_add(linked_nb_t *elem1, linked_nb_t *elem2, char *sign);
+char	*c_sub(linked_nb_t *elem1, linked_nb_t *elem2, char *sign);
+char	*c_mul(linked_nb_t *elem1, linked_nb_t *elem2, char *sign);
+char	*c_div(linked_nb_t *elem1, linked_nb_t *elem2, char *sign);
+char	*c_mod(linked_nb_t *elem1, linked_nb_t *elem2, char *sign);
 
 /* initialize */
 int	initialize(char *ops, char *base);
@@ -60,7 +60,7 @@ extern	char		*OPS;
 extern	char		*BASE;
 extern	int		BASE_LENGTH;
 extern	pfunc_t		COMPUTE_ARR[];
-extern	linked_nb_t	*STACK_NB;
-extern	linked_op_t	*STACK_OP;
+extern	linked_nb_t	*linked_NB;
+extern	linked_op_t	*linked_OP;
 
 #endif /* !BISTROMATIC_H_ */
