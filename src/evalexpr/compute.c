@@ -7,27 +7,68 @@
 
 #include "evalexpr.h"
 
-int	c_add(int nb1, int nb2)
+char	*c_add(char *s1, char *s2, char *sign)
 {
-	return (nb1 + nb2);
+	char	*result;
+
+	if (s1->sign == s2->sign) {
+		if (s1->sign == '-')
+			*sign = '-';
+		else
+			*sign = '+';
+		result = addinf(s1->nb, s2->nb);
+	}
+	else {
+		if (s1->sign == '-')
+			*sign = '-';
+		else
+			*sign = '+';
+		result = subinf(s1->nb, s2->nb);
+	}
+	return (result);
 }
 
-int	c_sub(int nb1, int nb2)
+char	*c_sub(char *s1, char *s2, char *sign)
 {
-	return (nb1 - nb2);
+	char	*result;
+
+	if (s1->sign == s2->sign) {
+		if (s1->sign == '-')
+			*sign = '-';
+		else
+			*sign = '+';
+		result = subinf(s1->nb, s2->nb);
+	}
+	else {
+		if (s1->sign == '-')
+			*sign = '-';
+		else
+			*sign = '+';
+		result = addinf(s1->nb, s2->nb);
+	}
+	return (result);
 }
 
-int	c_mul(int nb1, int nb2)
+char	*c_mul(char *s1, char *s2, char *sign)
 {
-	return (nb1 * nb2);
+	if (s1->sign == s2->sign)
+		*sign = '+';
+	else 
+		*sign = '-';
+	return (mulinf(s1->nb, s2->nb));
 }
 
-int	c_div(int nb1, int nb2)
+char	*c_div(char *s1, char *s2, char *sign)
 {
-	return (nb1 / nb2);
+	if (s1->sign == s2->sign)
+		*sign = '+';
+	else 
+		*sign = '-';
+	return (divinf(s1->nb, s2->nb));
 }
 
-int	c_mod(int nb1, int nb2)
+char	*c_mod(char *s1, char *s2, char *sign)
 {
-	return (nb1 % nb2);
+	*sign = s1->sign;
+	return (modinf(s1->nb, s2->nb));
 }

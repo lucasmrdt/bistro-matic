@@ -16,22 +16,30 @@ typedef struct linked_op {
 } linked_op_t;
 
 typedef struct linked_nb {
-	int			nb;
+	char			sign;
+	char			*nb;
 	struct linked_nb	*next;
 } linked_nb_t;
 
 typedef char *(*pfunc_t)(char *, char *);
 
 /* compute functions */
-char	*addinf(char *s1, char *s2);
-char	*subinf(char *s1, char *s2);
-char	*mulinf(char *s1, char *s2);
-char	*divinf(char *s1, char *s2);
-char	*modinf(char *s1, char *s2);
+void	subinf(char *s1, char *s2, char sign);
+void	mulinf(char *s1, char *s2, char sign);
+void	divinf(char *s1, char *s2, char sign);
+void	modinf(char *s1, char *s2, char sign);
+void	addinf(char *s1, char *s2, char sign);
+
+/* ptr functions */
+void	c_add(char *s1, char *s2);
+void	c_sub(char *s1, char *s2);
+void	c_mul(char *s1, char *s2);
+void	c_div(char *s1, char *s2);
+void	c_mod(char *s1, char *s2);
 
 /* initialize */
-int	initialize(linked_nb_t **STACK_NB, linked_op_t **STACK_OP, char *ops, char *base);
-int	initialize_stacks(linked_nb_t **STACK_NB, linked_op_t **STACK_OP);
+int	initialize(char *ops, char *base);
+int	initialize_stacks();
 int	initialize_global_var(char *ops, char *base);
 
 /* evalexpr */
@@ -48,8 +56,11 @@ int	get_weight(char op);
 int	get_number(char **str);
 
 /* global variables */
-extern	char	*OPS;
-extern	char	*BASE;
-extern	pfunc_t	COMPUTE_ARR[];
+extern	char		*OPS;
+extern	char		*BASE;
+extern	int		BASE_LENGTH;
+extern	pfunc_t		COMPUTE_ARR[];
+extern	linked_nb_t	*STACK_NB;
+extern	linked_op_t	*STACK_OP;
 
 #endif /* !BISTROMATIC_H_ */

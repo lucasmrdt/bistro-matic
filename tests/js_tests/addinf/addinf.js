@@ -17,10 +17,9 @@ var	fs = require("fs");
 var	nb1 = make_nb(nb_digit);
 var	nb2 = make_nb(nb_digit - 100);
 var	str1 = nb1 + " " + nb2;
-var	str2 = nb1 + "-" + nb2;
+var	str2 = nb1 + "+" + nb2;
 
-shell.exec("make -sC ..");
-shell.exec("./../test subinf " + str1 + " > res1");
+shell.exec("./test addinf " + str1 + " > res1");
 shell.exec("echo " + str2 +" | bc > res2");
 
 var	res1;
@@ -30,6 +29,7 @@ fs.readFile("res1", {encoding: 'utf-8'}, (err, data) => {
 	fs.readFile("res2", {encoding: 'utf-8'}, (err, data) => {
 		res2 = data.replace(/\\\n/g, "");
 		test_output(res1, res2);
+		clean();
 	});
 });
 
@@ -38,11 +38,11 @@ function	test_output(str1, str2)
 	console.log(white, "addinf : " + str1);
 	console.log(cyan, "bc : " + str2);
 	if (res1 == res2)
-		console.log(green, "\n[subinf] WORK");
+		console.log(green, "\n[addinf] WORK");
 	else
 	{
-		console.log("nb1 : " + nb1 + "\n-\n" + "nb2 : " + nb2);
-		console.log(red, "\n[subinf] DON'T WORK");
+		console.log("nb1 : " + nb1 + "\n+\n" + "nb2 : " + nb2);
+		console.log(red, "\n[addinf] DON'T WORK");
 	}
 }
 
@@ -55,4 +55,11 @@ function	make_nb(nb_digit)
 		nb_digit--;
 	}
 	return (str);
+shell.exec("make -sC ..");
+}
+
+function	clean()
+{
+	rm("res1");
+	rm("res2");
 }

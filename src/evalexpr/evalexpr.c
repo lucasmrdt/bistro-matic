@@ -8,94 +8,71 @@
 #include <stdlib.h>
 #include "evalexpr.h"
 
-int	evalexpr(char *str)
+int evalexpr(char *str, char *ops, char *base)
 {
-	linked_nb_t	*stack_nb;
-	linked_op_t	*stack_op;
-	int	nb;
-
-	if (!initialize(&stack_nb, &stack_op))
+	if (!initialize(ops, base))
 		return (0);
 	while (*str)
-		if (!is_operator(*str) || is_negative_number(str)) {
-			nb = get_number(&str);
-			if (!add_number(&stack_nb, nb))
-				return (0);
+		if (!is_operator(*str) || is_negative_number(str))
+		{
+			//			nb = get_number(&str);
+			//			if (!add_number(&STACK_NB, nb))
+			//				return (0);
 		}
-		else {
-			compute_priority(&stack_nb, &stack_op, *str);
+		else
+		{
+			compute_priority(*str);
 			str++;
 		}
-	while (stack_op->op)
-		compute(&stack_nb, &stack_op);
-	return (stack_nb->nb);
+	while (STACK_OP->op)
+		compute();
+	return (STACK_NB->nb);
 }
 
-int	compute_priority(linked_nb_t **stack_nb, linked_op_t **stack_op,
-	char op)
+int compute_priority(char op)
 {
-	void	*tmp;
-	int	weight;
+	void *tmp;
+	int weight;
 
 	weight = get_weight(op);
-	if (op == ')') {
-		while ((*stack_op)->op != '(')
-			compute(stack_nb, stack_op);
-		tmp = (*stack_op)->next;
-		free(*stack_op);
-		*stack_op = tmp;
+	if (op == ')')
+	{
+		while (STACK_OP->op != '(')
+			compute();
+		tmp = STACK_OP->next;
+		free(STACK_OP);
+		STACK_OP = tmp;
 	}
-	else {
-		while (weight <= (*stack_op)->weight && (*stack_op)->weight != 3)
-			compute(stack_nb, stack_op);
-		add_op(stack_op, op, weight);
+	else
+	{
+		while (weight <= STACK_OP->weight && STACK_OP->weight != 3)
+			compute();
+		add_op(STACK_OP, op, weight);
 	}
 	return (1);
 }
 
-void	compute(linked_nb_t **stack_nb, linked_op_t **stack_op)
+void	compute(void)
 {
 	void	*tmp;
-	int	res = 0;
-	int	nb[2];
+	char	*s1;
+	char	*s2;
+	char	*result;
+	char	sign;
 	int	i = -1;
 
-	tmp = (*stack_nb)->next;
-	nb[0] = (*stack_nb)->nb;
-	free(*stack_nb);
-	*stack_nb = tmp;
-	nb[1] = (*stack_nb)->nb;
-	while (ops[++i] != (*stack_op)->op);
-	res = pfunc_arr[i - 2](nb[1], nb[0]);
-	(*stack_nb)->nb = res;
-	tmp = (*stack_op)->next;
-	free(*stack_op);
-	*stack_op = tmp;
-}
-
-int	add_number(linked_nb_t **stack_nb, int nb)
-{
-	linked_nb_t	*elem;
-
-	elem = malloc(sizeof(*elem));
-	if (!elem)
-		return (0);
-	elem->nb = nb;
-	elem->next = *stack_nb;
-	*stack_nb = elem;
-	return (1);
-}
-
-int	add_op(linked_op_t **stack_op, char op, int weight)
-{
-	linked_op_t	*elem;
-
-	elem = malloc(sizeof(*elem));
-	if (!elem)
-		return (0);
-	elem->op = op;
-	elem->weight = weight;
-	elem->next = *stack_op;
-	*stack_op = elem;
-	return (1);
+	tmp = STACK_NB->next;
+	s1 = STACK_NB->value;
+	free(STACK_NB->value);
+	free(STACK_NB);
+	STACK_NB = tmp;
+	tmp = STACK_NB->next;
+	s2 = STACK_NB->value;
+	free(STACK_NB->value);
+	free(STACK_NB);
+	while (ops[++i] != STACK_OP->op);
+	set_bigger_first(&s1, &s2);
+	result = pfunc_arr[i - 2](s1, s2, &sign);
+	add_number(result, sign);
+	STACK_OP = tmp;
 }
