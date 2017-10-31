@@ -13,7 +13,7 @@ char	*divinf(char *s1, char *s2)
 
 	while (compare_str(s1, s2) > 0) {
 		q++;
-		s1 = sub_inf(s1, s2);
+		s1 = subinf(s1, s2);
 	}
 	return (convert(q));
 }
