@@ -12,6 +12,7 @@ SRC	=	my_putstr.c	\
 		my_revstr.c	\
 		my_strdup.c	\
 		my_strcpy.c	\
+		compare_str.c	\
 		indexof.c
 
 OBJ	=	$(SRC:.c=.o)

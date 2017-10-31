@@ -19,10 +19,13 @@ char	*subinf(char *s1, char *s2)
 	result = malloc(sizeof(char) * (length_s1 + 1));
 	if (!result)
 		return (NULL);
-	s1 = my_revstr(s1);
-	s2 = my_revstr(s2);
+	my_revstr(s1);
+	my_revstr(s2);
 	r_subinf(s1, s2, result, 0);
-	return (my_revstr(result));
+	my_revstr(result);
+	while (*result == '0')
+		result++;
+	return (result);
 }
 
 
