@@ -6,18 +6,26 @@
 */
 
 #include "my.h"
-#include "evalexpr.h"
+#include "bistromatic.h"
 
-int	get_number(char **str)
+int	add_next_nb_and_op(char **str)
 {
-	int	nb = 0;
-	int	sign = 1;
+	char	*tmp = *str;
+	char	op;
+	char	sign;
 
-	while (**str) {
+	sign = get_sign(tmp);
+	while (*tmp) {
+		if (*tmp == BASE[0]) {
+			(*str)++;
+		}
 		if (**str == '-' && !nb) {
 			sign *= -1;
 		}
-		else if (**str < '0' || **str > '9') {
+		else if (is_operator(**str)) {
+			op = **str;
+			**str = '\0';
+			add_number()
 			return (nb * sign);
 		}
 		else {
@@ -29,19 +37,9 @@ int	get_number(char **str)
 	return (nb);
 }
 
-int	is_operator(char c)
+char	get_sign(char *str)
 {
-	int	i = -1;
-
-	while (OPS[++i])
-		if (c == OPS[i])
-			return (1);
-	return (0);
-}
-
-int	is_negative_number(char *str)
-{
-	if (*str == '-' && *(str - 1) == '(')
-		return (1);
-	return (0);
+	if (*str == OP[3] && *(str - 1) == OP[0])
+		return (OP[3]);
+	return (OP[2]);
 }

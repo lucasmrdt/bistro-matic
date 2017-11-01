@@ -5,6 +5,8 @@
 ** file
 */
 
+#include "bistromatic.h"
+
 int	add_number(char	*str, char sign)
 {
 	linked_nb_t *elem;
