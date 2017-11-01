@@ -12,14 +12,16 @@ int	verif_nb_bracket(char *str)
 	int	k = 0;
 
 	while (str[i] != '\0') {
-		if (str[i] == '(')
+		if (str[i] == OPS[0])
 			j++;
-		if (str[i] == ')')
+		if (str[i] == OPS[1])
 			k++;
 		i++;
 	}
-	if (j != k)
-		return (84);
+	if (j != k) {
+		my_putstr(SYNTAX_ERROR_MSG);
+		exit(EXIT_SYNTAX);
+	}
 	return (0);
 }
 
