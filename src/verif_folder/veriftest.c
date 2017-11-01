@@ -28,20 +28,19 @@ int	verif_nb_bracket(char *str)
 int	verif_carac(char *str)
 {
 	int	i = 0;
+	int	j = 2;
 
-	while (str[i] != '\0') {
-		if (str[i] == '+' && str[i + 1] == ')')
-			return (84);
-		if (str[i] == '-' && str[i + 1] == ')')
-			return (84);
-		if (str[i] == '/' && str[i + 1] == ')')
-			return (84);
-		if (str[i] == '%' && str[i + 1] == ')')
-			return (84);
-		if (str[i] == '*' && str[i + 1] == ')')
-			return (84);
+	while (str[i]) {
+		while (str[i] != ops[j] && ops[j]) {
+				j++;
+			}
+		if (ops[j] && str[i + 1] == ops[1]) {
+			my_putstr(SYNTAX_ERROR_MSG);
+			exit(EXIT_SYNTAX);
+			}
+		if (!ops[j])
+			j = 2;
 		i++;
-	}
 	return (0);
 }
 
