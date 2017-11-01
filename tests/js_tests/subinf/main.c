@@ -11,9 +11,8 @@
 int	main(int ac, char **av)
 {
 	char	ops[] = "()+-/*\%";
-	char	base[] = "0123456789";
 
 	(void)(ac);
-	initialize(ops, base);
-	printf("%s\n", subinf(av[1], av[2]));
+	initialize(ops, av[1]);
+	printf("%s\n", subinf(av[2], av[3]));
 }

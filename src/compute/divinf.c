@@ -51,6 +51,6 @@ char	*r_divinf(char *s1, char *s2, char *n, char *q)
 	}
 	if (n[0] == '0')
 		n[0] = '\0';
-	q[my_strlen(q)] = qtmp + '0';
+	q[my_strlen(q)] = BASE[qtmp];
 	return (r_divinf(s1, s2, n, q));
 }

@@ -22,16 +22,18 @@ char	*addinf(char *s1, char *s2)
 	s1 = my_revstr(s1);
 	s2 = my_revstr(s2);
 	r_addinf(s1, s2, result, 0);
-	return (my_revstr(result));
+	my_revstr(result);
+	while (*result == BASE[0] && *result)
+		result++;
+	return (result);
 }
 
 int	r_addinf(char *s1, char *s2, char *result, int rest)
 {
-	int	base_length = my_strlen(BASE);
 	int	n1 = (*s1 ? indexof(BASE, *s1) : 0);
 	int	n2 = (*s2 ? indexof(BASE, *s2) : 0);
 	int	res_sum = n1 + n2 + rest;
-	int	unit = res_sum % base_length;
+	int	unit = res_sum % BASE_LENGTH;
 
 	if (!*s1 && !*s2 && !rest){
 		*result = '\0';
@@ -41,7 +43,7 @@ int	r_addinf(char *s1, char *s2, char *result, int rest)
 		s1++;
 	if (*s2)
 		s2++;
-	rest = res_sum / base_length % base_length;
+	rest = res_sum / BASE_LENGTH % BASE_LENGTH;
 	*result = BASE[unit];
 	return (r_addinf(s1, s2, ++result, rest));
 }
