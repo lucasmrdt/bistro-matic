@@ -73,11 +73,11 @@ int	verif_carac_bis(char *str)
 		if (str[i] == '(' && str[i + 1] == '+')
 			return (84);
 		if (str[i] == '(' && str[i + 1] == '/')
-                        return (84);
+			return (84);
 		if (str[i] == '(' && str[i + 1] == '%')
-                        return (84);
+			return (84);
 		if (str[i] == '(' && str[i + 1] == '*')
-                        return (error);
+			return (error);
 		i++;
 	}
 	return (0);
@@ -88,7 +88,7 @@ int	verif_double_carac(char *str)
 	int	i = 0;
 	int	j = 0;
 	char	opboard[] = "+-/%*";
-	
+
 	while (str[i] != '\0') {
 		printf("%s\n", "AAAAA");
 		while (str[i] != opboard[j] && opboard[j] != '\0') {
@@ -104,14 +104,12 @@ int	verif_double_carac(char *str)
 			}
 		}
 	i++;
-	
 	}
-}		
 
 int	main(int ac, char **argv)
 {
 	char	*str = argv[1];
-	
+
 	if (verif_nb_bracket(str) == 84)
 		return (84);
 	if (verif_carac(str) == 84)
