@@ -15,6 +15,11 @@ node subinf.js
 cd ../..
 
 echo "---"
+cd js_tests/mulinf
+node mulinf.js
+cd ../..
+
+echo "---"
 cd js_tests/divinf
 node divinf.js
 cd ../..

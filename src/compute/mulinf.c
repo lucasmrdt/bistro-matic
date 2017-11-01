@@ -1,16 +1,56 @@
 /*
 ** EPITECH PROJECT, 2017
-** mulinf
+** mul_inf
 ** File description:
-** file
+** mul_inf for bistromatic
 */
-
-#include <stdio.h>
+ 
+#include <stdlib.h>
+#include "my.h"
 #include "bistromatic.h"
-
+ 
+char	*my_revstr(char *);
+int	r_mulinf(char *s1, char s2, char *tmp, int rest);
+ 
 char	*mulinf(char *s1, char *s2)
 {
-	(void)(s1);
-	(void)(s2);
-	return (NULL);
+	int i = 0;
+	int j = 0;
+	char *result;
+	char *stock;
+	char *tmp;
+ 
+	my_revstr(s1);
+	my_revstr(s2);
+	tmp = malloc(sizeof(char) * (my_strlen(s1) + my_strlen(s2) + 1));
+	result = malloc(sizeof(char) * (my_strlen(s1) + my_strlen(s2) + 1));
+	while (s2[i]) {
+		r_mulinf(s1, s2[i], tmp + i, 0);
+		tmp = my_revstr(tmp);
+		result = addinf(tmp, result);
+		while (*result == '0' && *(result + 1))
+			result++;
+		tmp[i] = '0';
+		i++;
+	}
+	return (result);
+}
+ 
+int	r_mulinf(char *s1, char s2, char *tmp, int rest)
+{
+	int base_length = my_strlen(BASE);
+	int n1 = (*s1 ? indexof(BASE, *s1) : 0);
+	int n2 = s2 - 48;
+	int res_mul = (n1 * n2) + rest;
+	int unit = res_mul % 10;
+
+	if (!*s1 && !rest) {
+		*tmp = '\0';
+		return (0);
+	}
+	if (*s1)
+		s1++;
+	rest = (res_mul / 10) % (10);
+	*tmp = BASE[unit];
+	return (r_mulinf(s1, s2, ++tmp, rest));
 }
