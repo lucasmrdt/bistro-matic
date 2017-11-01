@@ -18,7 +18,7 @@ var	fs = require("fs");
 var	nb1 = make_nb(nb_digit);
 var	nb2 = make_nb(nb_digit - 100);
 var	str1 = nb1 + " " + nb2;
-var	str2 = nb1 + "/" + nb2;
+var	str2 = nb1 + "%" + nb2;
 
 shell.exec("./test " + str1 + " > res1");
 shell.exec("echo " + str2 +" | bc > res2");
@@ -39,10 +39,10 @@ while (nb_test) {
 function	test_output(str1, str2)
 {
 	if (res1 == res2)
-		console.log(green, "[divinf] WORK with " + nb_digit + " digits");
+		console.log(green, "[modinf] WORK with " + nb_digit + " digits");
 	else {
-		fs.writeFile("error", nb1 + "\n/\n" + nb2 + "\n\n" + res1 + "\n\n" + res2);
-		console.log(red, "[divinf] DON'T WORK with " + nb_digit + " digits");
+		fs.writeFile("error", nb1 + "\n%\n" + nb2 + "\n\n" + res1 + "\n\n" + res2);
+		console.log(red, "[modinf] DON'T WORK with " + nb_digit + " digits");
 	}
 }
 

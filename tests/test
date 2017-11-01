@@ -1,10 +1,25 @@
+echo "[criterion]"
+cd c_tests
+./test
+echo ""
+cd ..
+
+echo "[nodejs]"
 cd js_tests/addinf
 node addinf.js
 cd ../..
+
 echo "---"
 cd js_tests/subinf
 node subinf.js
 cd ../..
+
 echo "---"
 cd js_tests/divinf
 node divinf.js
+cd ../..
+
+echo "---"
+cd js_tests/modinf
+node modinf.js
+cd ../..

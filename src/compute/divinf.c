@@ -5,13 +5,12 @@
 ** div inf
 */
 
-
 #include <stdlib.h>
 #include <string.h>
 #include "my.h"
 #include "bistromatic.h"
 
-int	r_divinf(char *s1, char *s2, char *n, char *q);
+char	*r_divinf(char *s1, char *s2, char *n, char *q);
 
 char	*divinf(char *s1, char *s2)
 {
@@ -28,14 +27,16 @@ char	*divinf(char *s1, char *s2)
 	return (q);
 }
 
-int	r_divinf(char *s1, char *s2, char *n, char *q)
+char	*r_divinf(char *s1, char *s2, char *n, char *q)
 {
 	int	qtmp = 0;
 	int	run = 1;
 	int	length;
 
-	if (!*s1)
-		return (0);
+	if (!*s1) {
+		q[my_strlen(q)] = '\0';
+		return (n);
+	}
 	while (compare_str(n, s2) < 0 && *s1 && run) {
 		length = my_strlen(n);
 		n[length] = *s1;

@@ -23,9 +23,8 @@ char	*subinf(char *s1, char *s2)
 	my_revstr(s2);
 	r_subinf(s1, s2, result, 0);
 	my_revstr(result);
-	while (*result == '0')
+	while (*result == '0' && *(result + 1))
 		result++;
-//	printf("%s\n", result);
 	return (result);
 }
 
