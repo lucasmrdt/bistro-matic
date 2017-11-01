@@ -4,3 +4,7 @@ cd ../..
 echo "---"
 cd js_tests/subinf
 node subinf.js
+cd ../..
+echo "---"
+cd js_tests/divinf
+node divinf.js

@@ -7,6 +7,7 @@
 
 
 #include <stdlib.h>
+#include <string.h>
 #include "my.h"
 #include "bistromatic.h"
 
@@ -31,14 +32,16 @@ int	r_divinf(char *s1, char *s2, char *n, char *q)
 {
 	int	qtmp = 0;
 	int	run = 1;
+	int	length;
 
 	if (!*s1)
 		return (0);
 	while (compare_str(n, s2) < 0 && *s1 && run) {
-		n[my_strlen(n)] = *s1;
+		length = my_strlen(n);
+		n[length] = *s1;
 		s1++;
 		if (*q)
-			run = 0;
+		run = 0;
 	}
 	while(compare_str(n, s2) >= 0) {
 		n = subinf(n, s2);

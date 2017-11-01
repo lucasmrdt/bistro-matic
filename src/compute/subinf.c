@@ -25,6 +25,7 @@ char	*subinf(char *s1, char *s2)
 	my_revstr(result);
 	while (*result == '0')
 		result++;
+//	printf("%s\n", result);
 	return (result);
 }
 

@@ -9,7 +9,7 @@ const	red = "\x1b[31m";
 const	green = "\x1b[32m";
 const	cyan = "\x1b[36m";
 const	white = "\x1b[37m";
-const	nb_digit = 10000;
+const	nb_digit = 9999;
 var	nb_test = 10;
 
 var	shell = require("shelljs");
@@ -18,7 +18,7 @@ var	fs = require("fs");
 var	nb1 = make_nb(nb_digit);
 var	nb2 = make_nb(nb_digit - 10);
 var	str1 = nb1 + " " + nb2;
-var	str2 = nb1 + "+" + nb2;
+var	str2 = nb1 + "/" + nb2;
 
 shell.exec("./test " + str1 + " > res1");
 shell.exec("echo " + str2 +" | bc > res2");
@@ -39,9 +39,11 @@ while (nb_test) {
 function	test_output(str1, str2)
 {
 	if (res1 == res2)
-		console.log(green, "[addinf] WORK with " + nb_digit + " digits");
-	else
-		console.log(red, "[addinf] DON'T WORK with " + nb_digit + " digits");
+		console.log(green, "[divinf] WORK with " + nb_digit + " digits");
+	else {
+		fs.writeFile("error", nb1 + "\n/\n" + nb2 + "\n\n" + res1 + "\n\n" + res2);
+		console.log(red, "[divinf] DON'T WORK with " + nb_digit + " digits");
+	}
 }
 
 function	make_nb(nb_digit)
