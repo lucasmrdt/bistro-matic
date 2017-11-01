@@ -16,11 +16,16 @@ let	n2 = func.make_nb(nb_digit, base);
 const	op = "-"
 const	name = "subinf";
 
+
 let	str1 = base + " " + n1 + " " + n2;
 let	str2 = "\"obase=" + base.length + ";ibase=" + base.length + "; " + n1 + op + n2 + "\"";
 
+console.time("my_compute");
 shell.exec("./test " + str1 + " > res1");
+console.timeEnd("my_compute");
+console.time("bc");
 shell.exec("echo " + str2 +" | bc > res2");
+console.timeEnd("bc");
 
 let	res1 = "";
 let	res2 = "";

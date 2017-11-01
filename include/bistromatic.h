@@ -8,6 +8,15 @@
 #ifndef BISTROMATIC_H_
 # define BISTROMATIC_H_
 
+# define OP_OPEN_PARENT_IDX	0
+# define OP_CLOSE_PARENT_IDX	1
+# define OP_PLUS_IDX		2
+# define OP_SUB_IDX		3
+# define OP_NEG_IDX		3
+# define OP_MULT_IDX		4
+# define OP_DIV_IDX		5
+# define OP_MOD_IDX		6
+
 /* typedef */
 typedef struct linked_op {
 	char			op;
@@ -17,7 +26,7 @@ typedef struct linked_op {
 
 typedef struct linked_nb {
 	char			sign;
-	char			*nb;
+	char			*value;
 	struct linked_nb	*next;
 } linked_nb_t;
 
@@ -45,7 +54,7 @@ int	initialize_global_var(char *ops, char *base);
 /* evalexpr */
 int	evalexpr(char *str);
 int	compute_priority(char op);
-int	add_number(int nb);
+int	add_number(char *str, char sign);
 int	add_op(char op, int weight);
 void	compute(void);
 
@@ -60,7 +69,7 @@ extern	char		*OPS;
 extern	char		*BASE;
 extern	int		BASE_LENGTH;
 extern	pfunc_t		COMPUTE_ARR[];
-extern	linked_nb_t	*linked_NB;
-extern	linked_op_t	*linked_OP;
+extern	linked_nb_t	*STACK_NB;
+extern	linked_op_t	*STACK_OP;
 
 #endif /* !BISTROMATIC_H_ */

@@ -10,15 +10,9 @@
 
 int evalexpr(char *str, char *ops, char *base)
 {
-	if (!initialize(ops, base))
-		return (0);
 	while (*str)
-		if (!is_operator(*str) || is_negative_number(str))
-		{
-			//			nb = get_number(&str);
-			//			if (!add_number(&STACK_NB, nb))
-			//				return (0);
-		}
+		if (!is_operator(*str) || is_negative(str))
+			add_next_nb_and_op(str);
 		else
 		{
 			compute_priority(*str);

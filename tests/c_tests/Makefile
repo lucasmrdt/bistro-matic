@@ -18,7 +18,7 @@ SRC	=	$(ORIGIN)/tests/c_tests/compare_str.c	\
 		$(ORIGIN)/src/tools/is_negative.c	\
 		$(ORIGIN)/src/tools/is_operator.c	\
 		$(ORIGIN)/src/tools/stack_tools.c	\
-		$(ORIGIN)/src/tools/parse_tools.c	\
+		$(ORIGIN)/src/tools/add_next_nb_and_op.c	\
 		$(ORIGIN)/src/tools/get_weight.c	\
 		$(ORIGIN)/src/initialize.c
 
