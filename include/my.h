@@ -7,6 +7,12 @@
 
 #ifndef MY_H
 # define MY_H
+# define EXIT_USAGE	84
+# define EXIT_BASE	84
+# define EXIT_SIZE_NEG	84
+# define EXIT_MALLOC	84
+# define EXIT_READ	84
+# define EXIT_OPS	84
 
 void	my_putchar(char c);
 int	my_putstr(char const *str);
