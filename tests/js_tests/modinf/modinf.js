@@ -9,7 +9,12 @@ let	shell = require("shelljs");
 let	fs = require("fs");
 let	func = require("./../my_functions");
 
-let	nb_digit = Math.round(Math.random() * 10000);
+const	red = "\x1b[31m";
+const	green = "\x1b[32m";
+const	cyan = "\x1b[36m";
+const	white = "\x1b[37m";
+
+let	nb_digit = Math.round(Math.random() * 5000);
 let	base = func.make_base();
 let	n1 = func.make_nb(nb_digit + 3, base);
 let	n2 = func.make_nb(nb_digit, base);
@@ -19,6 +24,7 @@ const	name = "modinf";
 let	str1 = base + " " + n1 + " " + n2;
 let	str2 = "\"obase=" + base.length + ";ibase=" + base.length + "; " + n1 + op + n2 + "\"";
 
+console.log(cyan);
 console.time("my_compute");
 shell.exec("./test " + str1 + " > res1");
 console.timeEnd("my_compute");

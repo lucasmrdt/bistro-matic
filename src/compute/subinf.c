@@ -14,17 +14,17 @@ int	r_subinf(char *s1, char *s2, char *result, int rest);
 char	*subinf(char *s1, char *s2)
 {
 	char	*result;
-	int	length_s1 = my_strlen(s1);
+	int	length_s1 = my_strlen(s1) * 2;
 
 	result = malloc(sizeof(char) * (length_s1 + 1));
-	if (!result)
-		return (NULL);
+	my_memset(result, '\0', length_s1);
 	my_revstr(s1);
 	my_revstr(s2);
 	r_subinf(s1, s2, result, 0);
+	length_s1 = my_strlen(result);
+	while (result[--length_s1] == BASE[0])
+		result[length_s1] = '\0';
 	my_revstr(result);
-	while (*result == '0' && *(result + 1))
-		result++;
 	return (result);
 }
 
@@ -36,8 +36,10 @@ int	r_subinf(char *s1, char *s2, char *res_computed, int rest)
 	int	n2 = (*s2 ? indexof(BASE, *s2) + rest : rest);
 	int	unit;
 
-	if (!*s1)
+	if (!*s1) {
+		*res_computed = '\0';
 		return (0);
+	}
 	if (*s2)
 		s2++;
 	s1++;

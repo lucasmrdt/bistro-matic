@@ -17,6 +17,16 @@
 # define OP_DIV_IDX		5
 # define OP_MOD_IDX		6
 
+# define EXIT_USAGE	84
+# define EXIT_BASE	84
+# define EXIT_SIZE_NEG	84
+# define EXIT_MALLOC	84
+# define EXIT_READ	84
+# define EXIT_OPS	84
+
+# define SYNTAX_ERROR_MSG	"syntax error"
+# define ERROR_MSG		"error"
+
 /* typedef */
 typedef struct linked_op {
 	char			op;

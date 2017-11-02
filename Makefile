@@ -16,7 +16,7 @@ CFLAGS		=	-Iinclude -Wall -Wextra
 
 LDFLAGS		=	-Llib/my -lmy
 
-NAME_PRG	=	infinadd
+NAME_PRG	=	calc
 
 
 
@@ -30,7 +30,7 @@ all:			$(NAME_PRG)
 
 clean:
 		rm -f $(OBJ_PRG) $(OBJ_TEST)
-		$(MAKE) fclean -C tests
+##		$(MAKE) fclean -C tests
 
 fclean:			clean
 		rm -f $(NAME_PRG) $(NAME_TEST)

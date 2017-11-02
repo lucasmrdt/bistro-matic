@@ -13,6 +13,7 @@ SRC	=	my_putstr.c	\
 		my_strdup.c	\
 		my_strcpy.c	\
 		compare_str.c	\
+		my_memset.c	\
 		indexof.c
 
 OBJ	=	$(SRC:.c=.o)
