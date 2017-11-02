@@ -16,8 +16,8 @@
 # define EXIT_OPS	84
 # define EXIT_SYNTAX	84
 
-# define SYNTAX_ERROR_MSG	"syntax error\n"
-# define ERROR_MSG		"error\n"
+# define SYNTAX_ERROR_MSG	"syntax error"
+# define ERROR_MSG		"error"
 
 void	my_putchar(char c);
 int	my_putstr(char const *str);
