@@ -5,6 +5,8 @@
 ** header of bistromatic
 */
 
+#include <stdint.h>
+
 #ifndef BISTROMATIC_H_
 # define BISTROMATIC_H_
 
@@ -69,11 +71,11 @@ char	*char_to_str(char c);
 char	*get_nbr(char **str, char *sign);
 stack_elem_t	*get_elem_nbr(char **str);
 stack_elem_t	*get_elem_op(char **str);
-bool	is_bracket(char c);
-bool	is_hight_op(char c);
-bool	is_low_op(char c);
-bool	is_op(char c);
-bool	is_nbr(char c);
+int	is_bracket(char c);
+int	is_hight_op(char c);
+int	is_low_op(char c);
+int	is_op(char c);
+int	is_nbr(char c);
 int	get_weight(char op);
 void	set_bigger_first(stack_elem_t **elem1, stack_elem_t **elem2);
 
