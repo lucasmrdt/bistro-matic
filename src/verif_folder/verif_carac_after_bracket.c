@@ -11,7 +11,7 @@
 
 char	*OPS = "()+-*/%";
 
-int	verif_carac_behind_open_parent(char *str)
+int	verif_carac_after_open_parent(char *str)
 {
 	int	i = 0;
 	int	j = 4;
