@@ -27,13 +27,7 @@
 # define SYNTAX_ERROR_MSG	"syntax error"
 # define ERROR_MSG		"error"
 
-# define TRUE	1
-# define FALSE	1
-
 /* typedef */
-typedef unsigned int bool;
-//enum {true, false};
-
 typedef struct stack_elem {
 	char			sign;
 	int			weight;
