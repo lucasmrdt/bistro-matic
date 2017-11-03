@@ -11,22 +11,21 @@
 
 char	*OPS = "()+-*/%";
 
-int	verif_carac(char *str)
+int	verif_carac_behind_open_parent(char *str)
 {
 	int	i = 0;
-	int	j = 2;
+	int	j = 4;
 
 	while (str[i]) {
 		if (str[i] == OPS[OP_OPEN_PARENT_IDX])
 			while (OPS[j]) {
-				if (str[i + 1] == OPS[OP_PLUS_IDX] || str[i + 1] == OPS[OP_MULT_IDX] || str[i + 1] == OPS[OP_CLOSE_PARENT_IDX] ||
-				    str[i + 1] == OPS[OP_DIV_IDX] || str[i + 1] == OPS[OP_MOD_IDX]) {
+				if (str[i + 1] == OPS[j] || str[i + 1] == OPS[OP_CLOSE_PARENT_IDX]) {
 					my_putstr(SYNTAX_ERROR_MSG);
 					exit(EXIT_SYNTAX);
 				}
 				j++;
 			}
-		j = 2;
+		j = 4;
 		i++;
 	}
 	return (0);
