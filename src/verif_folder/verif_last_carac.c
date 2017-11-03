@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2017
-** verif_first_carac
+** verif last carac
 ** File description:
-** verif first carac
+** verif last carac
 */
 
 #include <stdlib.h>
@@ -11,12 +11,12 @@
 
 char	*OPS = "()+-*/%";
 
-int	verif_first_carac(char *str)
+int	verif_last_carac(char *str)
 {
-	int	i = 1;
+	int	i = 2;
 
 	while (OPS[i]) {
-		if (str[0] == OPS[i] && str[0] != OPS[OP_SUB_IDX]) {
+		if (str[my_strlen(str) -1] == OPS[i] || str[my_strlen(str) - 1] == OPS[0]) {
 			my_putstr(SYNTAX_ERROR_MSG);
 			exit(EXIT_SYNTAX);
 		}
