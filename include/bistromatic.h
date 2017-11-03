@@ -25,6 +25,7 @@
 # define EXIT_MALLOC	84
 # define EXIT_READ	84
 # define EXIT_OPS	84
+# define EXIT_SYNTAX	84
 
 # define SYNTAX_ERROR_MSG	"syntax error"
 # define ERROR_MSG		"error"
