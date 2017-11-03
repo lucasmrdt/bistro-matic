@@ -7,6 +7,7 @@
 
 #include <stdlib.h>
 #include "bistromatic.h"
+#include "my.h"
 
 /*void	my_putstr(char *);
 **int	my_strlen(char *);
@@ -24,6 +25,7 @@ int	main(int ac, char **av)
 	unsigned int	size;
 	char		*expr;
 
+	(void)(ac);
 	// if (ac != 4) {
 	// 	my_putstr("Usage: ");
 	// 	my_putstr(av[0]);
@@ -35,7 +37,7 @@ int	main(int ac, char **av)
 //	check_syntax();
 	size = my_getnbr(av[3]);
 	expr = get_expr(size);
-	eval_expr(av[1], av[2], expr, size);
+	eval_expr(expr);
 	return (EXIT_SUCCESS);
 }
 /*

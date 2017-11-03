@@ -7,7 +7,7 @@
 
 #include "bistromatic.h"
 
-stack_elem_t	*get_nbr_elem(char **str)
+stack_elem_t	*get_elem_nbr(char **str)
 {
 	stack_elem_t	*nbr;
 	char		sign;

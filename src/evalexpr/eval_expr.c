@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include "bistromatic.h"
 
-int eval_expr(char *str)
+char	*eval_expr(char *str)
 {
 	bool	wanted_char_is_op = false;
 	stack_elem_t	*op;
@@ -20,15 +20,15 @@ int eval_expr(char *str)
 				wanted_char_is_op = false;
 			else
 				wanted_char_is_op = true;
-			op = get_op(&str);
+			op = get_elem_op(&str);
 			add_op(op);
 		}
 		else if (!wanted_char_is_op) {
-			nbr = get_nbr(&str);
-			add_nbr(nbr);
+			nbr = get_elem_nbr(&str);
+			add_nb(nbr);
 		}
 		else {
-			op = get_op(&str);
+			op = get_elem_op(&str);
 			add_op(op);
 		}
 	}

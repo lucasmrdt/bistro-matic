@@ -7,24 +7,27 @@
 
 ## SOURCES
 SRC_PRG		=	main.c	\
+			src/initialize.c	\
 			src/compute/divinf.c	\
 			src/compute/modinf.c	\
 			src/compute/subinf.c	\
 			src/compute/mulinf.c	\
 			src/compute/addinf.c	\
-			src/initialize.c	\
 			src/evalexpr/evalexpr_compute.c	\
+			src/evalexpr/compute.c	\
+			src/evalexpr/evalexpr_tools.c	\
+			src/evalexpr/eval_expr.c	\
 			src/evalexpr/tools/is_nbr.c	\
 			src/evalexpr/tools/is_bracket.c	\
 			src/evalexpr/tools/get_nbr.c	\
+			src/evalexpr/tools/get_weight.c	\
+			src/evalexpr/tools/char_to_str.c	\
 			src/evalexpr/tools/is_low_op.c	\
+			src/evalexpr/tools/set_bigger_first.c	\
 			src/evalexpr/tools/get_elem_nbr.c	\
 			src/evalexpr/tools/get_elem_op.c	\
 			src/evalexpr/tools/is_hight_op.c	\
-			src/evalexpr/tools/is_op.c	\
-			src/evalexpr/evalexpr_tools.c	\
-			src/evalexpr/compute.c	\
-			src/evalexpr/evalexpr.c
+			src/evalexpr/tools/is_op.c
 
 OBJ_PRG		=	$(SRC_PRG:.c=.o)
 

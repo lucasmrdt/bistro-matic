@@ -7,7 +7,7 @@
 
 #include "bistromatic.h"
 
-stack_elem_t	*get_op(char **str)
+stack_elem_t	*get_elem_op(char **str)
 {
 	stack_elem_t	*op;
 	int		weight;

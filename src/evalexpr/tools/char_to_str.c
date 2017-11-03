@@ -5,6 +5,8 @@
 ** file
 */
 
+#include "bistromatic.h"
+
 char	*char_to_str(char c)
 {
 	char	*str;

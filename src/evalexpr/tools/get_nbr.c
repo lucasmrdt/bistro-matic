@@ -7,9 +7,7 @@
 
 #include "bistromatic.h"
 
-// -+666+7364
-// -(-(-7))
-// -(-++--(7))
+void	fill_nbr(char *tmp, char *nbr);
 
 char	*get_nbr(char **str, char *sign)
 {

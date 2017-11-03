@@ -1,18 +1,18 @@
 /*
 ** EPITECH PROJECT, 2017
-** is_operator
+** get_weight
 ** File description:
 ** file
 */
-
+ 
 #include "bistromatic.h"
 
-bool	is_op(char c)
+int  get_weight(char op)
 {
 	int	i = -1;
 
 	while (OPS[++i])
-		if (c == OPS[i])
-			return (true);
-	return (false);
+		if (OPS[i] == op)
+			return (i < 2 ? 3 : i < 4 ? 1 : 2);
+	return (0);
 }

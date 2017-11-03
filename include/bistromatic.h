@@ -46,8 +46,6 @@ char	*subinf(char *nb1, char *nb2);
 char	*mulinf(char *nb1, char *nb2);
 char	*divinf(char *nb1, char *nb2);
 char	*modinf(char *nb1, char *nb2);
-
-/* ptr functions */
 char	*c_add(stack_elem_t *elem1, stack_elem_t *elem2, char *sign);
 char	*c_sub(stack_elem_t *elem1, stack_elem_t *elem2, char *sign);
 char	*c_mul(stack_elem_t *elem1, stack_elem_t *elem2, char *sign);
@@ -60,16 +58,31 @@ void	initialize_stacks();
 void	initialize_global_var(char *ops, char *base);
 
 /* evalexpr */
-int	eval_expr(char *str);
+char	*eval_expr(char *str);
 void	compute_priority(stack_elem_t *elem);
+void	compute(void);
+void	next_op(void);
+void	next_nb(void);
 void	add_nb(stack_elem_t *nb);
 void	add_op(stack_elem_t *op);
-void	compute(void);
+void	remove_after_compute(void);
+
+/* evalexpr tools */
+char	*char_to_str(char c);
+char	*get_nbr(char **str, char *sign);
+stack_elem_t	*get_elem_nbr(char **str);
+stack_elem_t	*get_elem_op(char **str);
+bool	is_bracket(char c);
+bool	is_hight_op(char c);
+bool	is_low_op(char c);
+bool	is_op(char c);
+bool	is_nbr(char c);
+int	get_weight(char op);
+void	set_bigger_first(stack_elem_t **elem1, stack_elem_t **elem2);
 
 /* tools */
 int	is_negative_number(char *str);
 int	is_operator(char c);
-int	get_weight(char op);
 int	get_number(char **str);
 
 /* global variables */
