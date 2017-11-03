@@ -7,7 +7,7 @@
 
 #include "bistromatic.h"
 
-int	is_number(char c)
+int	is_base(char c)
 {
 	int	i = -1;
 

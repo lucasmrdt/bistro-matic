@@ -6,59 +6,30 @@
 */
 
 #include <stdlib.h>
-#include "evalexpr.h"
+#include "bistromatic.h"
 
-int evalexpr(char *str, char *ops, char *base)
+int eval_expr(char *str)
 {
-	while (*str)
-		if (!is_operator(*str) || is_negative(str))
-			add_next_nb_and_op(str);
-		else
-		{
-			compute_priority(*str);
-			str++;
+	bool	wanted_char_is_op = false;
+	stack_elem_t	*op;
+	stack_elem_t	*nbr;
+
+	while (*str) {
+		if (is_bracket(*str)) {
+			if (*str == OPS[OP_OPEN_PARENT_IDX])
+				wanted_char_is_op = false;
+			else
+				wanted_char_is_op = true;
+			op = get_op(&str);
+			add_op(op);
 		}
-	while (STACK_OP->op)
-		compute();
-	return (STACK_NB->nb);
-}
-
-int compute_priority(char op)
-{
-	void *tmp;
-	int weight;
-
-	weight = get_weight(op);
-	if (op == ')')
-	{
-		while (STACK_OP->op != '(')
-			compute();
-		tmp = STACK_OP->next;
-		free(STACK_OP);
-		STACK_OP = tmp;
+		else if (!wanted_char_is_op) {
+			nbr = get_nbr(&str);
+			add_nbr(nbr);
+		}
+		else {
+			op = get_op(&str);
+			add_op(op);
+		}
 	}
-	else
-	{
-		while (weight <= STACK_OP->weight && STACK_OP->weight != 3)
-			compute();
-		add_op(STACK_OP, op, weight);
-	}
-	return (1);
-}
-
-void	compute(void)
-{
-	void	*elem1;
-	void	*elem2;
-	char	*result;
-	char	sign;
-	int	i = -1;
-
-	elem1 = STACK_NB->next;
-	elem2 = STACK_NB;
-	while (ops[++i] != STACK_OP->op);
-	set_bigger_first(&elem1, &elem2);
-	result = pfunc_arr[i - 2](elem1, elem2, &sign);
-	add_number(result, sign);
-	STACK_OP = tmp;
 }

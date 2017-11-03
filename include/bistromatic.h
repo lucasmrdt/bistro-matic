@@ -28,44 +28,42 @@
 # define ERROR_MSG		"error"
 
 /* typedef */
-typedef struct linked_op {
-	char			op;
-	int			weight;
-	struct linked_op	*next;
-} linked_op_t;
+typedef int	bool;
+enum {true, false};
 
-typedef struct linked_nb {
+typedef struct stack_elem {
 	char			sign;
+	int			weight;
 	char			*value;
-	struct linked_nb	*next;
-} linked_nb_t;
+	struct stack_elem	*next;
+} stack_elem_t;
 
-typedef char *(*pfunc_t)(linked_nb_t *, linked_nb_t *, char *);
+typedef char *(*pfunc_t)(stack_elem_t *elem1, stack_elem_t *elem2, char *sign);
 
 /* compute functions */
-char	*addinf(char *s1, char *s2);
-char	*subinf(char *s1, char *s2);
-char	*mulinf(char *s1, char *s2);
-char	*divinf(char *s1, char *s2);
-char	*modinf(char *s1, char *s2);
+char	*addinf(char *nb1, char *nb2);
+char	*subinf(char *nb1, char *nb2);
+char	*mulinf(char *nb1, char *nb2);
+char	*divinf(char *nb1, char *nb2);
+char	*modinf(char *nb1, char *nb2);
 
 /* ptr functions */
-char	*c_add(linked_nb_t *elem1, linked_nb_t *elem2, char *sign);
-char	*c_sub(linked_nb_t *elem1, linked_nb_t *elem2, char *sign);
-char	*c_mul(linked_nb_t *elem1, linked_nb_t *elem2, char *sign);
-char	*c_div(linked_nb_t *elem1, linked_nb_t *elem2, char *sign);
-char	*c_mod(linked_nb_t *elem1, linked_nb_t *elem2, char *sign);
+char	*c_add(stack_elem_t *elem1, stack_elem_t *elem2, char *sign);
+char	*c_sub(stack_elem_t *elem1, stack_elem_t *elem2, char *sign);
+char	*c_mul(stack_elem_t *elem1, stack_elem_t *elem2, char *sign);
+char	*c_div(stack_elem_t *elem1, stack_elem_t *elem2, char *sign);
+char	*c_mod(stack_elem_t *elem1, stack_elem_t *elem2, char *sign);
 
 /* initialize */
-int	initialize(char *ops, char *base);
-int	initialize_stacks();
-int	initialize_global_var(char *ops, char *base);
+void	initialize(char *ops, char *base);
+void	initialize_stacks();
+void	initialize_global_var(char *ops, char *base);
 
 /* evalexpr */
-int	evalexpr(char *str);
-int	compute_priority(char op);
-int	add_number(char *str, char sign);
-int	add_op(char op, int weight);
+int	eval_expr(char *str);
+void	compute_priority(stack_elem_t *elem);
+void	add_nb(stack_elem_t *nb);
+void	add_op(stack_elem_t *op);
 void	compute(void);
 
 /* tools */
@@ -79,7 +77,7 @@ extern	char		*OPS;
 extern	char		*BASE;
 extern	int		BASE_LENGTH;
 extern	pfunc_t		COMPUTE_ARR[];
-extern	linked_nb_t	*STACK_NB;
-extern	linked_op_t	*STACK_OP;
+extern	stack_elem_t	*STACK_NB;
+extern	stack_elem_t	*STACK_OP;
 
 #endif /* !BISTROMATIC_H_ */

@@ -7,7 +7,7 @@
 
 #include "bistromatic.h"
 
-char	*c_add(linked_nb_t *elem1, linked_nb_t *elem2, char *sign)
+char	*c_add(stack_elem_t *elem1, stack_elem_t *elem2, char *sign)
 {
 	char	*result;
 
@@ -28,7 +28,7 @@ char	*c_add(linked_nb_t *elem1, linked_nb_t *elem2, char *sign)
 	return (result);
 }
 
-char	*c_sub(linked_nb_t *elem1, linked_nb_t *elem2, char *sign)
+char	*c_sub(stack_elem_t *elem1, stack_elem_t *elem2, char *sign)
 {
 	char	*result;
 
@@ -49,7 +49,7 @@ char	*c_sub(linked_nb_t *elem1, linked_nb_t *elem2, char *sign)
 	return (result);
 }
 
-char	*c_mul(linked_nb_t *elem1, linked_nb_t *elem2, char *sign)
+char	*c_mul(stack_elem_t *elem1, stack_elem_t *elem2, char *sign)
 {
 	if (elem1->sign == elem2->sign)
 		*sign = '+';
@@ -58,7 +58,7 @@ char	*c_mul(linked_nb_t *elem1, linked_nb_t *elem2, char *sign)
 	return (mulinf(elem1->value, elem2->value));
 }
 
-char	*c_div(linked_nb_t *elem1, linked_nb_t *elem2, char *sign)
+char	*c_div(stack_elem_t *elem1, stack_elem_t *elem2, char *sign)
 {
 	if (elem1->sign == elem2->sign)
 		*sign = '+';
@@ -67,7 +67,7 @@ char	*c_div(linked_nb_t *elem1, linked_nb_t *elem2, char *sign)
 	return (divinf(elem1->value, elem2->value));
 }
 
-char	*c_mod(linked_nb_t *elem1, linked_nb_t *elem2, char *sign)
+char	*c_mod(stack_elem_t *elem1, stack_elem_t *elem2, char *sign)
 {
 	*sign = elem1->sign;
 	return (modinf(elem1->value, elem2->value));

@@ -12,16 +12,22 @@ const	green = "\x1b[32m";
 const	cyan = "\x1b[36m";
 const	white = "\x1b[37m";
 
+let	max_digits = 213;
+
 module.exports = {
+	
+	nb_digits : Math.floor(Math.random() * (max_digits - 1) + 1),
+
 	display_result(n1, n2, res1, res2, op, name, base)
 	{
 		let	output = n1 + "\n" + op + "\n" + n2 + "\n\n" + res1 + "\n\n" + res2;
 
-		fs.writeFile("output", output);
 		if (res1 == res2)
-			console.log(green, "[" + name + "] WORK with " + n2.length + " digits   [" + base + "]");
-		else
+		console.log(green, "[" + name + "] WORK with " + n2.length + " digits   [" + base + "]");
+		else {
+			fs.appendFile("output", output);
 			console.log(red, "[" + name + "] DON'T WORK with " + n2.length + " digits   [" + base + "]");
+		}
 	},
 
 	make_base()

@@ -33,6 +33,8 @@ char	*mulinf(char *s1, char *s2)
 		tmp[i] = '0';
 		i++;
 	}
+	if (!*result)
+		*result = '0';
 	return (result);
 }
  

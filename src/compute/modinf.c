@@ -26,5 +26,7 @@ char	*modinf(char *s1, char *s2)
 	my_memset(n, '\0', length_s1);
 	my_memset(q, '\0', length_s1);
 	n = r_divinf(s1, s2, n, q);
+	if (n[0] == '\0')
+		n[0] = BASE[0];
 	return (n);
 }

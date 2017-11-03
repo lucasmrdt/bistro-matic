@@ -9,7 +9,7 @@
 
 int	is_negative(char *str)
 {
-	if (*str == OPS[OP_NEG_IDX] && *(str - 1) == OPS[OP_OPEN_PARENT_IDX])
+	if (*str == OPS[OP_NEG_IDX] && is_operator(*(str - 1)))
 		return (1);
 	return (0);
 }

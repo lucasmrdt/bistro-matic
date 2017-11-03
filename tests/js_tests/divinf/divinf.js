@@ -14,9 +14,9 @@ const	green = "\x1b[32m";
 const	cyan = "\x1b[36m";
 const	white = "\x1b[37m";
 
-let	nb_digit = Math.round(Math.random() * 5000);
+let	nb_digit = func.nb_digits;
 let	base = func.make_base();
-let	n1 = func.make_nb(nb_digit + 3, base);
+let	n1 = func.make_nb(nb_digit + 1, base);
 let	n2 = func.make_nb(nb_digit, base);
 const	op = "/"
 const	name = "divinf";

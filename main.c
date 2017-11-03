@@ -31,12 +31,11 @@ int	main(int ac, char **av)
 	// 	return (EXIT_USAGE);
 	// }
 	initialize(av[1], av[2]);
-	check_error();
-	check_syntax();
+//	check_error();
+//	check_syntax();
 	size = my_getnbr(av[3]);
 	expr = get_expr(size);
-	printf("%s\n", expr);
-//	my_putstr(eval_expr(av[1], av[2], expr, size));
+	eval_expr(av[1], av[2], expr, size);
 	return (EXIT_SUCCESS);
 }
 /*
