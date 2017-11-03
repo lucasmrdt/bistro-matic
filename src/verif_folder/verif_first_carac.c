@@ -13,10 +13,10 @@ char	*OPS = "()+-*/%";
 
 int	verif_first_carac(char *str)
 {
-	int	i = 1;
+	int	i = 4;
 
 	while (OPS[i]) {
-		if (str[0] == OPS[i] && str[0] != OPS[OP_SUB_IDX]) {
+		if (str[0] == OPS[i] || str[0] == OPS[OP_CLOSE_PARENT_IDX]) {
 			my_putstr(SYNTAX_ERROR_MSG);
 			exit(EXIT_SYNTAX);
 		}
