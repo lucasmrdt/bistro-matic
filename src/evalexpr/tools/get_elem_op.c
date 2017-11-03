@@ -6,6 +6,7 @@
 */
 
 #include "bistromatic.h"
+#include <stdlib.h>
 
 stack_elem_t	*get_elem_op(char **str)
 {

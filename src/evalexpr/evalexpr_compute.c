@@ -6,11 +6,10 @@
 */
 
 #include "bistromatic.h"
+#include <stdlib.h>
 
 void	compute_priority(stack_elem_t *elem)
 {
-	void	*tmp;
-
 	if (*(elem->value) == OPS[OP_OPEN_PARENT_IDX]) {
 		while (*(STACK_OP->value) != OPS[OP_CLOSE_PARENT_IDX])
 			compute();
@@ -27,7 +26,6 @@ void	compute(void)
 {
 	stack_elem_t	*elem1;
 	stack_elem_t	*elem2;
-	char		*result;
 	char		sign;
 	int		i = -1;
 

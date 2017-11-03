@@ -19,11 +19,12 @@ char	*get_nbr(char **str, char *sign)
 	char	op;
 
 	while (!is_op(**str) && loop) {
-		if (is_low_op(**str))
+		if (is_low_op(**str)) {
 			if (length)
 				loop = false;
 			else if(**str == OPS[OP_NEG_IDX])
 				nb_neg_sign++;
+		}
 		else if (is_nbr(**str))
 			length++;
 		*str++;

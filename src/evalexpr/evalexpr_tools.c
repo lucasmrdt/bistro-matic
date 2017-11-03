@@ -6,6 +6,7 @@
 */
 
 #include "bistromatic.h"
+#include <stdlib.h>
 
 void	next_op(void)
 {

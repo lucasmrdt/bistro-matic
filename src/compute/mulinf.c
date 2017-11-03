@@ -15,9 +15,7 @@ int	r_mulinf(char *s1, char s2, char *tmp, int rest);
 char	*mulinf(char *s1, char *s2)
 {
 	int i = 0;
-	int j = 0;
 	char *result;
-	char *stock;
 	char *tmp;
  
 	my_revstr(s1);

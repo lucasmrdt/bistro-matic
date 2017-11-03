@@ -10,7 +10,7 @@
 #include "my.h"
 #include "bistromatic.h"
 
-int	r_modinf(char *s1, char *s2, char *n, char *q);
+char	*r_divinf(char *s1, char *s2, char *n, char *q);
 
 char	*modinf(char *s1, char *s2)
 {

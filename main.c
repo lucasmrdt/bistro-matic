@@ -6,6 +6,7 @@
 */
 
 #include <stdlib.h>
+#include <unistd.h>
 #include "bistromatic.h"
 #include "my.h"
 
