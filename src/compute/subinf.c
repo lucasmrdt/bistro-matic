@@ -22,7 +22,7 @@ char	*subinf(char *s1, char *s2)
 	my_revstr(s2);
 	r_subinf(s1, s2, result, 0);
 	length_s1 = my_strlen(result);
-	while (result[--length_s1] == BASE[0])
+	while (result[--length_s1] == BASE[0] && length_s1)
 		result[length_s1] = '\0';
 	my_revstr(result);
 	return (result);

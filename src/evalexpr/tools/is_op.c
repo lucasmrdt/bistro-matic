@@ -5,9 +5,10 @@
 ** file
 */
 
+#include <stdbool.h>
 #include "bistromatic.h"
 
-bool	is_op(char c)
+int	is_op(char c)
 {
 	int	i = -1;
 

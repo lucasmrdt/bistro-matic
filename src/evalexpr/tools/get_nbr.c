@@ -5,6 +5,8 @@
 ** file
 */
 
+#include <stdlib.h>
+#include <stdbool.h>
 #include "bistromatic.h"
 
 void	fill_nbr(char *tmp, char *nbr);
@@ -18,16 +20,19 @@ char	*get_nbr(char **str, char *sign)
 	int	length = 0;
 	char	op;
 
-	while (!is_op(**str) && loop) {
+	while (!is_hight_op(**str) && loop && **str) {
 		if (is_low_op(**str)) {
-			if (length)
+			if (length) {
 				loop = false;
+				(*str)--;
+			}
 			else if(**str == OPS[OP_NEG_IDX])
 				nb_neg_sign++;
 		}
-		else if (is_nbr(**str))
+		else if (is_nbr(**str)) {
 			length++;
-		*str++;
+		}
+		(*str)++;
 	}
 	op = **str;
 	**str = 0;

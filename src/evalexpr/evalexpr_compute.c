@@ -29,13 +29,10 @@ void	compute(void)
 	char		sign;
 	int		i = -1;
 
-	elem1 = STACK_NB;
-	elem2 = STACK_NB->next;
+	elem2 = STACK_NB;
+	elem1 = STACK_NB->next;
 	while (OPS[++i] != *(STACK_OP->value));
-	set_bigger_first(&elem1, &elem2);
-	result = (COMPUTE_ARR[i - 2])(elem1, elem2, &sign);
-	free(elem2->value);
-	elem2->value = (COMPUTE_ARR[i - 2])(elem1, elem2, &sign);
-	elem2->sign = sign;
+	STACK_NB->next->value = (COMPUTE_ARR[i - 2])(elem1, elem2, &sign);
+	STACK_NB->next->sign = sign;
 	remove_after_compute();
 }

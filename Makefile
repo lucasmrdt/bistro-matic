@@ -8,6 +8,7 @@
 ## SOURCES
 SRC_PRG		=	main.c	\
 			src/initialize.c	\
+			src/error.c	\
 			src/compute/divinf.c	\
 			src/compute/modinf.c	\
 			src/compute/subinf.c	\
@@ -23,6 +24,7 @@ SRC_PRG		=	main.c	\
 			src/evalexpr/tools/get_weight.c	\
 			src/evalexpr/tools/char_to_str.c	\
 			src/evalexpr/tools/is_low_op.c	\
+			src/evalexpr/tools/reverse_sign.c	\
 			src/evalexpr/tools/set_bigger_first.c	\
 			src/evalexpr/tools/get_elem_nbr.c	\
 			src/evalexpr/tools/get_elem_op.c	\

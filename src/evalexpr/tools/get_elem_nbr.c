@@ -5,6 +5,8 @@
 ** file
 */
 
+#include <stdlib.h>
+#include "my.h"
 #include "bistromatic.h"
 
 stack_elem_t	*get_elem_nbr(char **str)

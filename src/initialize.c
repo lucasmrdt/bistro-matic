@@ -34,7 +34,7 @@ void	initialize_stacks()
 	STACK_OP->next = NULL;
 }
 
-void	initialize_global_var(char *ops, char *base)
+void	initialize_global_var(char *base, char *ops)
 {
 	const int	ops_length = my_strlen(ops);
 

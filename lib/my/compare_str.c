@@ -5,6 +5,8 @@
 ** compare two str
 */
 
+int	my_strlen(char *str);
+
 char	compare_str(char *s1, char *s2)
 {
 	int	i = -1;

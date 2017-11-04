@@ -5,14 +5,15 @@
 ** file
 */
 
+#include <stdbool.h>
 #include "bistromatic.h"
 
-bool	is_nbr(char c)
+int	is_nbr(char c)
 {
 	int	i = -1;
 
-	while (OPS[++i])
-		if (c == OPS[i])
+	while (BASE[++i])
+		if (c == BASE[i])
 			return (true);
 	return (false);
 }

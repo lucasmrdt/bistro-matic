@@ -5,9 +5,10 @@
 ** file
 */
 
+#include <stdbool.h>
 #include "bistromatic.h"
 
-bool	is_low_op(char c)
+int	is_low_op(char c)
 {
 	if (c == OPS[OP_NEG_IDX]
 	|| c == OPS[OP_PLUS_IDX])

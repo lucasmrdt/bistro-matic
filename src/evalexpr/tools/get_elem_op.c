@@ -22,7 +22,8 @@ stack_elem_t	*get_elem_op(char **str)
 	op->value = malloc(sizeof(char) * 2);
 	if(!op->value)
 		exit(EXIT_MALLOC);
-	op->value = char_to_str(*str);
+	op->value = char_to_str(**str);
 	op->weight = weight;
+	(*str)++;
 	return (op);
 }

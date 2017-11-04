@@ -5,6 +5,8 @@
 ** header of bistromatic
 */
 
+#include <stdbool.h>
+
 #include <stdint.h>
 
 #ifndef BISTROMATIC_H_
@@ -52,10 +54,11 @@ char	*c_mul(stack_elem_t *elem1, stack_elem_t *elem2, char *sign);
 char	*c_div(stack_elem_t *elem1, stack_elem_t *elem2, char *sign);
 char	*c_mod(stack_elem_t *elem1, stack_elem_t *elem2, char *sign);
 
-/* initialize */
+/* global functions */
 void	initialize(char *ops, char *base);
 void	initialize_stacks();
 void	initialize_global_var(char *ops, char *base);
+void	display_error(char *msg, int exit_error);
 
 /* evalexpr */
 char	*eval_expr(char *str);
@@ -78,7 +81,8 @@ int	is_low_op(char c);
 int	is_op(char c);
 int	is_nbr(char c);
 int	get_weight(char op);
-void	set_bigger_first(stack_elem_t **elem1, stack_elem_t **elem2);
+void	reverse_sign(stack_elem_t **elem);
+void	set_bigger_first(stack_elem_t **elem1, stack_elem_t **elem2, bool rev_sign);
 
 /* tools */
 int	is_negative_number(char *str);
