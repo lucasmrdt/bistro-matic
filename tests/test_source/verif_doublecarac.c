@@ -20,11 +20,11 @@ int	verif_doublecarac(char *str)
 		while (str[i] != OPS[j] && OPS[j])
 			j++;
 		if (str[i] == OPS[j] && OPS[j])
-			j = 2;
-		while (OPS[j] && str[i + 1] != OPS[j] && str[i + 1]) { 
+			j = 4;
+		while (OPS[j] && str[i + 1] != OPS[j]) { 
 			j++;
 		}
-		if (str[i + 1] == OPS[j] && j != OP_SUB_IDX) {
+		if (str[i + 1] == OPS[j] && OPS[j]) {
 			my_putstr(SYNTAX_ERROR_MSG);
 			return (EXIT_SYNTAX);
 		}
