@@ -7,9 +7,12 @@
 
 #include <stdlib.h>
 #include "my.h"
+#include "bistromatic.h"
 
 int my_putstr(char const *);
 
+char	*OPS = "()+-*/%";
+	
 int verif_parenthese_number(char *str)
 {
 	int i = 0;
@@ -26,7 +29,8 @@ int verif_parenthese_number(char *str)
 			    || str[i + 1] == OPS[OP_MOD_IDX] ) {
 			} else {
 				my_putstr(SYNTAX_ERROR_MSG);
-				exit(EXIT_SYNTAX);
+				return (84);
+//		exit(EXIT_SYNTAX);
 			}
 		}
 		i += 1;

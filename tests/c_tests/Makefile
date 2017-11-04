@@ -7,20 +7,11 @@
 
 ORIGIN	=	../..
 
-SRC	=	$(ORIGIN)/tests/c_tests/compare_str.c	\
-		$(ORIGIN)/tests/c_tests/add_next_nb_and_op.c	\
-		$(ORIGIN)/src/compute/addinf.c		\
-		$(ORIGIN)/src/compute/subinf.c		\
-		$(ORIGIN)/src/compute/divinf.c		\
-		$(ORIGIN)/src/compute/mulinf.c		\
-		$(ORIGIN)/src/compute/modinf.c		\
-		$(ORIGIN)/src/evalexpr/compute.c	\
-		$(ORIGIN)/src/tools/is_negative.c	\
-		$(ORIGIN)/src/tools/is_operator.c	\
-		$(ORIGIN)/src/tools/stack_tools.c	\
-		$(ORIGIN)/src/tools/add_next_nb_and_op.c	\
-		$(ORIGIN)/src/tools/get_weight.c	\
-		$(ORIGIN)/src/initialize.c
+TO_TEST_FOLDER	=	tests/c_tests
+
+SRC	=	$(ORIGIN)/$(TO_TEST_FOLDER)/syntax_test.c \
+		$(ORIGIN)/$(TO_TEST_FOLDER)/mult_par_test.c	\
+		$(ORIGIN)/src/verif_folder/verif_parentheses_number.c
 
 OBJ	=	$(SRC:.c=.o)
 
@@ -35,7 +26,7 @@ NAME	=	test
 
 $(NAME):	$(OBJ)
 	$(MAKE) -C 	$(ORIGIN)/lib/my
-	$(CC) -o 	$(NAME) $(OBJ) $(LDFLAGS)
+	$(CC) -o 	$(NAME) -I../../include $(OBJ) $(LDFLAGS)
 	$(MAKE) 	clean
 
 all:		$(NAME)
