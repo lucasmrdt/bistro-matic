@@ -9,18 +9,9 @@
 #include "my.h"
 #include "bistromatic.h"
 
-char	*OPS = "()+-*/%";
-
-int	verif_first_carac(char *str)
+int	verif_first_carac(char c)
 {
-	int	i = 4;
-
-	while (OPS[i]) {
-		if (str[0] == OPS[i] || str[0] == OPS[OP_CLOSE_PARENT_IDX]) {
-			my_putstr(SYNTAX_ERROR_MSG);
-			exit(EXIT_SYNTAX);
-		}
-		i++;
-	}
+	if (is_high_op && c != OPS[OP_OPEN_PARENT_IDX])
+		display_error(SYNTAX_ERROR_MSG, EXIT_SYNTAX);
 	return (0);
 }

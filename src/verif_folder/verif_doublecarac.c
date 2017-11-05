@@ -9,8 +9,6 @@
 #include "bistromatic.h"
 #include "stdlib.h"
 
-char	*OPS = "()+-*/%";
-
 int	verif_doublecarac(char *str)
 {
 	if (is_op(*str) && !is_bracket(*str))
