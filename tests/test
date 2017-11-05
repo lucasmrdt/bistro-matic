@@ -16,5 +16,8 @@ cd ../..
 cd js_tests/modinf
 node modinf.js
 cd ../..
+cd js_tests/bistromatic
+node bistromatic.js
+cd ../..
 
 ./test

@@ -12,7 +12,7 @@ const	green = "\x1b[32m";
 const	cyan = "\x1b[36m";
 const	white = "\x1b[37m";
 
-let	max_digits = 213;
+let	max_digits = 10;
 
 module.exports = {
 	
