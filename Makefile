@@ -46,7 +46,7 @@ OBJ_PRG		=	$(SRC_PRG:.c=.o)
 
 CC		=	gcc
 
-CFLAGS		=	-Iinclude -Wall -Wextra -g
+CFLAGS		=	-Iinclude -Wall -Wextra
 
 LDFLAGS		=	-Llib/my -lmy
 
