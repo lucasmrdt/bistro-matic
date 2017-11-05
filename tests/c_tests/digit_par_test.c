@@ -51,3 +51,31 @@ Test(Test_six, digit_par)
 
 	cr_assert(verif_digit_par(str) == 0, "Err in 123%(4)");
 }
+
+Test(Test_seven, digit_par)
+{
+	char *str = "123+(56)-4(6)";
+
+	cr_assert(verif_digit_par(str) == 84, "Err in 123+(56)-4(6)");
+}
+
+Test(Test_eight, digit_par)
+{
+	char *str = "1+(2-(7)(1)";
+
+	cr_assert(verif_digit_par(str) == 84, "Err in 1+(2-(7)(1)");
+}
+
+Test(Test_nine, digit_par)
+{
+	char *str = "((((3))))";
+
+	cr_assert(verif_digit_par(str) == 0, "Err in ((((3))))");
+}
+
+Test(Test_ten, digit_par)
+{
+	char *str = "3-(1+((2)))";
+		
+	cr_assert(verif_digit_par(str) == 0, "Err in 3-(1+((2)))"); 
+}
