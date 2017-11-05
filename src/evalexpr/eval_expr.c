@@ -12,8 +12,6 @@
 char	*eval_expr(char *str)
 {
 	bool		next_is_op = false;
-	stack_elem_t	*op;
-	stack_elem_t	*nbr;
 
 	while (*str) {
 		if (is_bracket(*str)) {
@@ -21,25 +19,21 @@ char	*eval_expr(char *str)
 				next_is_op = false;
 			else
 				next_is_op = true;
-			op = get_elem_op(&str);
-			compute_priority(op);
+			compute_priority(get_elem_op(*str));
+			str++;
 		}
 		else if (!next_is_op) {
-			printf("nb : %s\n", str);
 			next_is_op = true;
-			nbr = get_elem_nbr(&str);
-			add_nb(nbr);
+			add_nb(get_elem_nbr(&str));
 		}
 		else {
 			next_is_op = false;
-			op = get_elem_op(&str);
-			compute_priority(op);
+			compute_priority(get_elem_op(*str));
+			str++;
 		}
 	}
-	while (STACK_OP->value) {
+	while (STACK_OP->value)
 		compute();
-		printf("next : %s\n", STACK_OP->value);
-	}
 	printf("res : %c%s\n", STACK_NB->sign, STACK_NB->value);
 	return ("ok");
 }

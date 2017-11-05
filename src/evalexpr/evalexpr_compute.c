@@ -10,14 +10,10 @@
 
 void	compute_priority(stack_elem_t *elem)
 {
-	printf("comp : %c\n", elem->value[0]);
 	if (*(elem->value) == OPS[OP_CLOSE_PARENT_IDX]) {
-		while (*(STACK_OP->value) != OPS[OP_OPEN_PARENT_IDX]) {
-			printf("compute\n");
+		while (*(STACK_OP->value) != OPS[OP_OPEN_PARENT_IDX])
 			compute();
-		}
 		next_op();
-		printf("next op : %c\n", STACK_OP->value[0]);
 	}
 	else {
 		while (elem->weight <= STACK_OP->weight && STACK_OP->weight != 3)

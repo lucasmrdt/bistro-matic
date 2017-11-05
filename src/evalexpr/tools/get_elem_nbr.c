@@ -16,7 +16,6 @@ stack_elem_t	*get_elem_nbr(char **str)
 	char		*value  = get_nbr(str, &sign);
 	int		length = my_strlen(value);
 
-	printf("VALUE : %c\n", sign);
 	nbr = malloc(sizeof(*nbr));
 	if (!nbr)
 		exit(EXIT_MALLOC);

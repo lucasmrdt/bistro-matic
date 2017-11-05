@@ -40,10 +40,12 @@ char	*get_nbr(char **str, char *sign)
 	nbr = fill_nbr(tmp, length);
 	*sign = (nb_neg_sign % 2 ? OPS[OP_NEG_IDX] : OPS[OP_PLUS_IDX]);
 	**str = op;
+	if (!length)
+		add_op(get_elem_op(*sign));
 	return (nbr);
 }
 
-char	*fill_nbr(char *tmp, int length)
+char	*fill_nbr(char *str, int length)
 {
 	int	i = 0;
 	bool	number_is_begin = false;
@@ -52,21 +54,20 @@ char	*fill_nbr(char *tmp, int length)
 	nbr = malloc(sizeof(char) * (length + 1));
 	if (!nbr)
 		exit(EXIT_MALLOC);
-	while (*tmp) {
-		if (!number_is_begin && *tmp != BASE[0]) {
-			number_is_begin = true;
+	while (*str) {
+		if (is_nbr(*str)) {
+			if (!number_is_begin && *str != BASE[0]) {
+				number_is_begin = true;
+			}
+			if (number_is_begin) {
+				nbr[i] = *str;
+				i++;
+			}
 		}
-		if (is_nbr(*tmp) && number_is_begin) {
-			nbr[i] = *tmp;
-			i++;
-		}
-		tmp++;
-	}
-	if (!number_is_begin) {
-		add_op(get_elem_op((char_to_str('-'))));
+		str++;
 	}
 	if (!nbr[0])
-		nbr[i++] = BASE[0];
-	nbr[i] = 0;
+		nbr[0] = BASE[0];
+	nbr[++i] = 0;
 	return (nbr);
 }

@@ -74,7 +74,7 @@ void	remove_after_compute(void);
 char	*char_to_str(char c);
 char	*get_nbr(char **str, char *sign);
 stack_elem_t	*get_elem_nbr(char **str);
-stack_elem_t	*get_elem_op(char **str);
+stack_elem_t	*get_elem_op(char c);
 int	is_bracket(char c);
 int	is_hight_op(char c);
 int	is_low_op(char c);
