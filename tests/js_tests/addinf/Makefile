@@ -13,6 +13,8 @@ SRC	=	$(ORIGIN)/tests/js_tests/addinf/main.c	\
 		$(ORIGIN)/src/compute/divinf.c		\
 		$(ORIGIN)/src/compute/mulinf.c		\
 		$(ORIGIN)/src/compute/modinf.c		\
+		$(ORIGIN)/src/evalexpr/tools/set_bigger_first.c	\
+		$(ORIGIN)/src/evalexpr/tools/reverse_sign.c	\
 		$(ORIGIN)/src/evalexpr/compute.c	\
 		$(ORIGIN)/src/initialize.c
 

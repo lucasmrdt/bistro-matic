@@ -25,7 +25,6 @@ char	*c_sub(stack_elem_t *elem1, stack_elem_t *elem2, char *sign)
 {
 	char	*result;
 
-	printf("init : %c%s - %c%s\n", elem1->sign, elem1->value, elem2->sign, elem2->value);
 	if (elem1->sign == elem2->sign) {
 		set_bigger_first(&elem1, &elem2, true);
 		*sign = elem1->sign;
@@ -36,12 +35,12 @@ char	*c_sub(stack_elem_t *elem1, stack_elem_t *elem2, char *sign)
 		*sign = elem1->sign;
 		result = addinf(elem1->value, elem2->value);
 	}
-	printf("after : %c%s - %c%s\n", elem1->sign, elem1->value, elem2->sign, elem2->value);
 	return (result);
 }
 
 char	*c_mul(stack_elem_t *elem1, stack_elem_t *elem2, char *sign)
 {
+	set_bigger_first(&elem1, &elem2, false);	
 	if (elem1->sign == elem2->sign)
 		*sign = OPS[OP_PLUS_IDX];
 	else 

@@ -16,10 +16,10 @@ char		*BASE;
 int		BASE_LENGTH;
 pfunc_t		COMPUTE_ARR[] = {&c_add, &c_sub, &c_mul, &c_div, &c_mod};
 
-void	initialize(char *ops, char *base)
+void	initialize(char *base, char *ops)
 {
 	initialize_stacks();
-	initialize_global_var(ops, base);
+	initialize_global_var(base, ops);
 }
 
 void	initialize_stacks()

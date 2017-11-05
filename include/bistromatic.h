@@ -55,9 +55,9 @@ char	*c_div(stack_elem_t *elem1, stack_elem_t *elem2, char *sign);
 char	*c_mod(stack_elem_t *elem1, stack_elem_t *elem2, char *sign);
 
 /* global functions */
-void	initialize(char *ops, char *base);
+void	initialize(char *base, char *ops);
 void	initialize_stacks();
-void	initialize_global_var(char *ops, char *base);
+void	initialize_global_var(char *base, char *ops);
 void	display_error(char *msg, int exit_error);
 
 /* evalexpr */

@@ -15,16 +15,19 @@ char	*addinf(char *s1, char *s2)
 {
 	char	*result;
 	int	length_s1 = my_strlen(s1);
+	int	length;
 
 	result = malloc(sizeof(char) * (length_s1 + 2));
 	if (!result)
 		return (NULL);
+	my_memset(result, 0, my_strlen(s1) + my_strlen(s2) + 1);		
 	s1 = my_revstr(s1);
 	s2 = my_revstr(s2);
 	r_addinf(s1, s2, result, 0);
+	length = my_strlen(result);
+	while (result[--length] == BASE[0] && length)
+		result[length] = 0;
 	my_revstr(result);
-	while (*result == BASE[0] && *result)
-		result++;
 	return (result);
 }
 

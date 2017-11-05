@@ -14,14 +14,16 @@ int	r_mulinf(char *s1, char s2, char *tmp, int rest);
  
 char	*mulinf(char *s1, char *s2)
 {
-	int i = 0;
-	char *result;
-	char *tmp;
+	int	i = 0;
+	char	*result;
+	char	*tmp;
  
 	my_revstr(s1);
 	my_revstr(s2);
 	tmp = malloc(sizeof(char) * (my_strlen(s1) + my_strlen(s2) + 1));
 	result = malloc(sizeof(char) * (my_strlen(s1) + my_strlen(s2) + 1));
+	my_memset(result, 0, my_strlen(s1) + my_strlen(s2) + 1);
+	my_memset(tmp, 0, my_strlen(s1) + my_strlen(s2) + 1);
 	while (s2[i]) {
 		r_mulinf(s1, s2[i], tmp + i, 0);
 		tmp = my_revstr(tmp);
