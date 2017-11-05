@@ -13,24 +13,8 @@ char	*OPS = "()+-*/%";
 
 int	verif_doublecarac(char *str)
 {
-	int	i = 0;
-	int	j = 2;
-
-	while (str[i]) { 
-		while (str[i] != OPS[j] && OPS[j])
-			j++;
-		if (str[i] == OPS[j] && OPS[j])
-			j = 4;
-		while (OPS[j] && str[i + 1] != OPS[j] && str[i + 1]) { 
-			j++;
-		}
-		if (str[i + 1] == OPS[j] && OPS[j]) {
-			my_putstr(SYNTAX_ERROR_MSG);
-			exit(EXIT_SYNTAX);
-		}
-
-		j = 2;
-		i++;
-}
+	if (is_op(*str) && !is_bracket(*str))
+	    if (is_high_op(*(str + 1)) && !is_bracket(*(str + 1)))
+		    display_error(SYNTAX_ERROR_MSG, EXIT_SYNTAX);
 	return (0);
 }
