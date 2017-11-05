@@ -14,7 +14,8 @@ stack_elem_t	*STACK_OP;
 char		*OPS;
 char		*BASE;
 int		BASE_LENGTH;
-pfunc_t		COMPUTE_ARR[] = {&c_add, &c_sub, &c_mul, &c_div, &c_mod};
+pfunc_t		COMPUTE_ARR[] = {&c_add, &c_sub, &c_mul, &c_div, &c_mod, NULL};
+pfunc_t		VERIF_ARR[] = {NULL};
 
 void	initialize(char *base, char *ops)
 {

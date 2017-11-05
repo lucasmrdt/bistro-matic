@@ -7,8 +7,8 @@
 
 #include "my.h"
 
-void	display_error(char *msg, int exit_value)
+void	display_error(char *msg)
 {
 	my_putstr(msg);
-	exit(exit_value);
+	exit(84);
 }

@@ -20,7 +20,7 @@ char	*get_nbr(char **str, char *sign)
 	int	length = 0;
 	char	op;
 
-	while (!is_hight_op(**str) && loop && **str) {
+	while (!is_high_op(**str) && loop && **str) {
 		if (is_low_op(**str)) {
 			if (length) {
 				loop = false;

@@ -9,24 +9,14 @@
 #include "my.h"
 #include "bistromatic.h"
 
-char	*OPS = "()+-*/%";
+/*
+** patern /([*%/)]/
+*/
 
 int	verif_carac_after_open_parent(char *str)
 {
-	int	i = 0;
-	int	j = 4;
-
-	while (str[i]) {
-		if (str[i] == OPS[OP_OPEN_PARENT_IDX])
-			while (OPS[j]) {
-				if (str[i + 1] == OPS[j] || str[i + 1] == OPS[OP_CLOSE_PARENT_IDX]) {
-					my_putstr(SYNTAX_ERROR_MSG);
-					exit(EXIT_SYNTAX);
-				}
-				j++;
-			}
-		j = 4;
-		i++;
-	}
+	if (*str == OPS[OP_OPEN_PARENT_IDX])
+		if (is_high_op(*(str + 1)) && *(str + 1) != OPS[OP_OPEN_PARENT_IDX])
+			display_error(SYNTAX_ERROR_MSG);
 	return (0);
 }

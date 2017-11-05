@@ -76,7 +76,7 @@ char	*get_nbr(char **str, char *sign);
 stack_elem_t	*get_elem_nbr(char **str);
 stack_elem_t	*get_elem_op(char c);
 int	is_bracket(char c);
-int	is_hight_op(char c);
+int	is_high_op(char c);
 int	is_low_op(char c);
 int	is_op(char c);
 int	is_nbr(char c);
