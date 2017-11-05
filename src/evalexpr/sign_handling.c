@@ -41,10 +41,10 @@ char	*c_sub(stack_elem_t *elem1, stack_elem_t *elem2, char *sign)
 
 char	*c_mul(stack_elem_t *elem1, stack_elem_t *elem2, char *sign)
 {
-	set_bigger_first(&elem1, &elem2, false);	
+	set_bigger_first(&elem1, &elem2, false);
 	if (elem1->sign == elem2->sign)
 		*sign = OPS[OP_PLUS_IDX];
-	else 
+	else
 		*sign = OPS[OP_NEG_IDX];
 	return (mulinf(elem1->value, elem2->value));
 }
@@ -55,7 +55,7 @@ char	*c_div(stack_elem_t *elem1, stack_elem_t *elem2, char *sign)
 		exit(EXIT_USAGE);
 	if (elem1->sign == elem2->sign)
 		*sign = OPS[OP_PLUS_IDX];
-	else 
+	else
 		*sign = OPS[OP_NEG_IDX];
 	return (divinf(elem1->value, elem2->value));
 }

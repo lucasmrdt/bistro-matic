@@ -5,7 +5,6 @@
 ## file
 ##
 
-## SOURCES
 SRC_PRG		=	main.c	\
 			src/initialize.c	\
 			src/display_error.c	\
@@ -59,12 +58,10 @@ $(NAME_PRG)	:	$(OBJ_PRG)
 		$(CC) -o $(NAME_PRG) $(OBJ_PRG) $(LDFLAGS)
 		$(MAKE) clean
 
-
 all:			$(NAME_PRG)
 
 clean:
 		rm -f $(OBJ_PRG) $(OBJ_TEST)
-##		$(MAKE) fclean -C tests
 
 fclean:			clean
 		rm -f $(NAME_PRG) $(NAME_TEST)

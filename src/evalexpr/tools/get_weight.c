@@ -4,7 +4,7 @@
 ** File description:
 ** file
 */
- 
+
 #include "bistromatic.h"
 
 int	get_weight(char op)

@@ -9,7 +9,7 @@
 #include "my.h"
 #include "bistromatic.h"
 
-void	set_bigger_first(stack_elem_t **elem1, stack_elem_t **elem2, 
+void	set_bigger_first(stack_elem_t **elem1, stack_elem_t **elem2,
 	bool rev_sign)
 {
 	stack_elem_t	*tmp;

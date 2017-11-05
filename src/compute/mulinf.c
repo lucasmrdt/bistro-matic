@@ -4,20 +4,20 @@
 ** File description:
 ** mul_inf for bistromatic
 */
- 
+
 #include <stdlib.h>
 #include "my.h"
 #include "bistromatic.h"
- 
+
 char	*my_revstr(char *);
 int	r_mulinf(char *s1, char s2, char *tmp, int rest);
- 
+
 char	*mulinf(char *s1, char *s2)
 {
 	int	i = 0;
 	char	*result;
 	char	*tmp;
- 
+
 	my_revstr(s1);
 	my_revstr(s2);
 	tmp = malloc(sizeof(char) * (my_strlen(s1) + my_strlen(s2) + 1));
@@ -37,7 +37,7 @@ char	*mulinf(char *s1, char *s2)
 		*result = '0';
 	return (result);
 }
- 
+
 int	r_mulinf(char *s1, char s2, char *tmp, int rest)
 {
 	int	n1 = (*s1 ? indexof(BASE, *s1) : 0);

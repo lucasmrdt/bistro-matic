@@ -34,7 +34,7 @@ char	*subinf(char *s1, char *s2)
 
 int	r_subinf(char *s1, char *s2, char *res_computed, int rest)
 {
-	int	base_length = my_strlen(BASE);	
+	int	base_length = my_strlen(BASE);
 	int	n1 = (*s1 ? indexof(BASE, *s1) : 0);
 	int	n2 = (*s2 ? indexof(BASE, *s2) + rest : rest);
 	int	unit;
