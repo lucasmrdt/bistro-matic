@@ -5,6 +5,7 @@
 ** file
 */
 
+#include <stdlib.h>
 #include "my.h"
 
 void	display_error(char *msg)

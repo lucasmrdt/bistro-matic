@@ -5,7 +5,9 @@
 ** file
 */
 
+#include <stdlib.h>
 #include "bistromatic.h"
+#include "my.h"
 
 void	check_error(int ac, char **av)
 {
@@ -13,7 +15,7 @@ void	check_error(int ac, char **av)
 		my_putstr("Usage: ");
 		my_putstr(av[0]);
 		my_putstr(" base ops \"()+_*/%\" exp_len\n");
-		return (EXIT_USAGE);
+		exit(EXIT_USAGE);
 	}
 	if (my_strlen(av[1]) < 2)
 		display_error(SYNTAX_ERROR_MSG);

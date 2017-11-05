@@ -17,7 +17,6 @@ char	*modinf(char *s1, char *s2)
 	char	*n;
 	char	*q;
 	int	length_s1 = my_strlen(s1);
-	int	length_s2 = my_strlen(s2);
 
 	n = malloc(sizeof(char) * (length_s1 + 1));
 	q = malloc(sizeof(char) * (length_s1 + 1));

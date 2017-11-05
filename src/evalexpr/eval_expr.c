@@ -7,11 +7,12 @@
 
 #include <stdbool.h>
 #include <stdlib.h>
+#include "my.h"
 #include "bistromatic.h"
 
 char	*eval_expr(char *str)
 {
-	bool		next_is_op = false;
+	bool	next_is_op = false;
 
 	while (*str) {
 		if (is_bracket(*str)) {
