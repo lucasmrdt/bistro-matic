@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2017
-** syntax test 
+** syntax test
 ** File description:
-** error is not direct 
+** error is not direct
 */
 
 #include <criterion/criterion.h>

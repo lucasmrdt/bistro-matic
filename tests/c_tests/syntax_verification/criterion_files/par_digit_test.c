@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2017
-** test 
+** test
 ** File description:
-** syntax test 
+** syntax test
 */
 
 #include <stdio.h>

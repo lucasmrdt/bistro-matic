@@ -76,6 +76,6 @@ Test(digit_before_brackete, digit_par)
 Test(digit_before_bracket, digit_par)
 {
 	char	*str = "3-(1+((2)))";
-		
-	cr_assert(check_syntax(str) == 0, "Err in 3-(1+((2)))"); 
+
+	cr_assert(check_syntax(str) == 0, "Err in 3-(1+((2)))");
 }

@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2017
 ** bas_op_test
 ** File description:
-** check if the base and the ops are goods 
+** check if the base and the ops are goods
 */
 
 #include <criterion/criterion.h>
@@ -16,7 +16,7 @@ Test(check_base_or_op, base_op)
 	char	*str = "11";
 
 	initialize(base, ops);
-	cr_assert(check_syntax(str) == 0, "Err 11"); 
+	cr_assert(check_syntax(str) == 0, "Err 11");
 }
 
 Test(check_base_or_op, base_op)
@@ -26,7 +26,7 @@ Test(check_base_or_op, base_op)
 	char	*str = "1+1";
 
 	initialize(base, ops);
-	cr_assert(check_syntax(str) == 0, "Err 1+1"); 
+	cr_assert(check_syntax(str) == 0, "Err 1+1");
 }
 
 Test(check_base_or_opee, base_op)
@@ -36,7 +36,7 @@ Test(check_base_or_opee, base_op)
 	char	*str = "1-1";
 
 	initialize(base, ops);
-	cr_assert(check_syntax(str) == 0, "Err 1-1"); 
+	cr_assert(check_syntax(str) == 0, "Err 1-1");
 }
 
 Test(check_base_or_opr, base_op)
@@ -46,7 +46,7 @@ Test(check_base_or_opr, base_op)
 	char	*str = "1*1";
 
 	initialize(base, ops);
-	cr_assert(check_syntax(str) == 0, "Err 1*1"); 
+	cr_assert(check_syntax(str) == 0, "Err 1*1");
 }
 
 Test(check_base_or_ope, base_op)
@@ -56,7 +56,7 @@ Test(check_base_or_ope, base_op)
 	char	*str = "1/1";
 
 	initialize(base, ops);
-	cr_assert(check_syntax(str) == 0, "Err 1/1"); 
+	cr_assert(check_syntax(str) == 0, "Err 1/1");
 }
 
 Test(check_base_or_op, base_op)
@@ -66,7 +66,7 @@ Test(check_base_or_op, base_op)
 	char	*str = "1%1";
 
 	initialize(base, ops);
-	cr_assert(check_syntax(str) == 0, "Err 1%1"); 
+	cr_assert(check_syntax(str) == 0, "Err 1%1");
 }
 
 Test(check_base_or_open, base_op)
@@ -76,7 +76,7 @@ Test(check_base_or_open, base_op)
 	char	*str = "p";
 
 	initialize(base, ops);
-	cr_assert(check_syntax(str) == 84, "Err p"); 
+	cr_assert(check_syntax(str) == 84, "Err p");
 }
 
 Test(check_base_or_opht, base_op)
@@ -86,7 +86,7 @@ Test(check_base_or_opht, base_op)
 	char	*str = "1+(23p)-4";
 
 	initialize(base, ops);
-	cr_assert(check_syntax(str) == 84, "Err 1+(23p)-4"); 
+	cr_assert(check_syntax(str) == 84, "Err 1+(23p)-4");
 }
 
 Test(check_base_or_ope, base_op)
@@ -96,7 +96,7 @@ Test(check_base_or_ope, base_op)
 	char	*str = "1l1";
 
 	initialize(base, ops);
-	cr_assert(check_syntax(str) == 84, "Err 1l1"); 
+	cr_assert(check_syntax(str) == 84, "Err 1l1");
 }
 
 Test(check_base_or_op, base_op)
@@ -106,7 +106,7 @@ Test(check_base_or_op, base_op)
 	char	*str = "(";
 
 	initialize(base, ops);
-	cr_assert(check_syntax(str) == 0, "Err ("); 
+	cr_assert(check_syntax(str) == 0, "Err (");
 }
 
 Test(check_base_or_opven, base_op)
@@ -116,7 +116,7 @@ Test(check_base_or_opven, base_op)
 	char	*str = ")";
 
 	initialize(base, ops);
-	cr_assert(check_syntax(str) == 0, ")"); 
+	cr_assert(check_syntax(str) == 0, ")");
 }
 
 Test(check_base_or_oplve, base_op)
@@ -126,7 +126,7 @@ Test(check_base_or_oplve, base_op)
 	char	*str = "+";
 
 	initialize(base, ops);
-	cr_assert(check_syntax(str) == 0, "Err +"); 
+	cr_assert(check_syntax(str) == 0, "Err +");
 }
 
 Test(check_base_or_oprteen, base_op)
@@ -136,7 +136,7 @@ Test(check_base_or_oprteen, base_op)
 	char	*str = "-";
 
 	initialize(base, ops);
-	cr_assert(check_syntax(str) == 0, "Err -"); 
+	cr_assert(check_syntax(str) == 0, "Err -");
 }
 
 Test(check_base_or_oprteen, base_op)
@@ -146,7 +146,7 @@ Test(check_base_or_oprteen, base_op)
 	char	*str = "*";
 
 	initialize(base, ops);
-	cr_assert(check_syntax(str) == 0, "Err *"); 
+	cr_assert(check_syntax(str) == 0, "Err *");
 }
 
 Test(check_base_or_opteen, base_op)
@@ -156,7 +156,7 @@ Test(check_base_or_opteen, base_op)
 	char	*str = "/";
 
 	initialize(base, ops);
-	cr_assert(check_syntax(str) == 0, "Err /"); 
+	cr_assert(check_syntax(str) == 0, "Err /");
 }
 
 Test(check_base_or_opteen, base_op)
@@ -166,9 +166,5 @@ Test(check_base_or_opteen, base_op)
 	char	*str = "%";
 
 	initialize(base, ops);
-	cr_assert(check_syntax(str) == 0, "Err %"); 
+	cr_assert(check_syntax(str) == 0, "Err %");
 }
-
-
-
-

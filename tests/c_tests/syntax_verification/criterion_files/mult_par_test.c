@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2017
-** syntax test 
+** syntax test
 ** File description:
-**  error is not direct 
+**  error is not direct
 */
 
 #include <criterion/criterion.h>
@@ -11,7 +11,7 @@
 
 Test(Test_seven, basic_test)
 {
-        char    *tmp = "-123";
+	char    *tmp = "-123";
 	char    *ops = "()+-/%";
 	char    *base = "0123456789";
 	char    *str = "(123)+(40)3";
@@ -21,7 +21,7 @@ Test(Test_seven, basic_test)
 
 Test(Test_eight, basic_test)
 {
- 	char    *tmp = "-123";
+	char    *tmp = "-123";
 	char    *ops = "()+-\%";
 	char    *base = "0123456789";
 	char    *str = "1234";
@@ -31,7 +31,7 @@ Test(Test_eight, basic_test)
 
 Test(Test_nine, basic_test)
 {
- 	char    *tmp = "-123";
+	char    *tmp = "-123";
 	char    *ops = "()+-\%";
 	char    *base = "0123456789";
 	char    *str = ")1234";
@@ -41,7 +41,7 @@ Test(Test_nine, basic_test)
 
 Test(Test_ten, basic_test)
 {
- 	char    *tmp = "-123";
+	char    *tmp = "-123";
 	char    *ops = "()+-\%";
 	char    *base = "0123456789";
 	char    *str = ")+12)34";

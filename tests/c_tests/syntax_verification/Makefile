@@ -44,9 +44,9 @@ NAME	=	test
 
 
 $(NAME):	$(OBJ)
-	$(MAKE) -C 	$(ORIGIN)/lib/my
-	$(CC) -o 	$(NAME) -I../../include $(OBJ) $(LDFLAGS)
-	$(MAKE) 	clean
+	$(MAKE)  -C	$(ORIGIN)/lib/my
+	$(CC) -o	$(NAME) -I../../include $(OBJ) $(LDFLAGS)
+	$(MAKE)	clean
 
 all:		$(NAME)
 
