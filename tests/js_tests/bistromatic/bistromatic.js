@@ -15,8 +15,8 @@ const	cyan = "\x1b[36m";
 const	white = "\x1b[37m";
 
 const	name = "bistromatic";
-const	max_computes = 10;
-let	nb_computes = Math.round(Math.random() * (max_computes - 1) + 1);
+const	max_computes = 1000;
+let	nb_computes = Math.round(Math.random() * (max_computes - 100) + 100);
 //let	base = func.make_base();
 let	base = "0123456789";
 let	ops = "()+-*/%";
@@ -29,19 +29,19 @@ while (nb_computes)
 	if (Math.random() > .7)
 	{
 		if (compute && !isNaN(compute[compute.length - 1]))
-			compute += ops[Math.round(Math.random() * (6 - 2) + 2)];
+			compute += ops[Math.round(Math.random() * (4 - 2) + 2)];
 		compute += ops[0];
 		nb_brackets++;
 	}
 	compute += Math.floor(Math.random() * 10) + 1;
-	compute += ops[Math.round(Math.random() * (6 - 2) + 2)];
+	compute += ops[Math.round(Math.random() * (4 - 2) + 2)];
 	compute += Math.floor(Math.random() * 10) + 1;
 	nb_computes--;
 	if (nb_brackets && Math.random() > .7)
 	{
 		compute += ops[1];
 		if (nb_computes)
-			compute += ops[Math.round(Math.random() * (6 - 2) + 2)];
+			compute += ops[Math.round(Math.random() * (4 - 2) + 2)];
 		nb_brackets--;
 	}
 }

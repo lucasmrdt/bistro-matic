@@ -52,9 +52,9 @@ char	*fill_nbr(char *str, int length)
 	char	*nbr;
 
 	nbr = malloc(sizeof(char) * (length + 1));
-	my_memset(nbr, 0, length);
 	if (!nbr)
 		exit(EXIT_MALLOC);
+	my_memset(nbr, 0, length);
 	while (*str) {
 		if (is_nbr(*str)) {
 			if (!number_is_begin && *str != BASE[0]) {
@@ -69,6 +69,5 @@ char	*fill_nbr(char *str, int length)
 	}
 	if (!nbr[0])
 		nbr[0] = BASE[0];
-	nbr[++i] = 0;
 	return (nbr);
 }

@@ -35,7 +35,7 @@ char	*eval_expr(char *str)
 	}
 	while (STACK_OP->value)
 		compute();
-	if (STACK_NB->sign == OPS[OP_NEG_IDX])
+	if (STACK_NB->sign == OPS[OP_NEG_IDX] && STACK_NB->value[0] != BASE[0])
 		my_putchar(OPS[OP_NEG_IDX]);
 	return (STACK_NB->value);
 }

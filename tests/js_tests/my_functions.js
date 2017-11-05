@@ -30,6 +30,18 @@ module.exports = {
 		}
 	},
 
+	display_result_bistro(res1, res2, expr, base)
+	{
+		let	output = expr + "\n\n" + res1 + "\n\n" + res2;
+
+		if (res1 == res2 || res1 == "error" && res2 == "")
+		console.log(green, "[bistro] WORK with " + expr + "  [" + base + "]");
+		else {
+			fs.appendFile("output", output);
+			console.log(red, "[bistro] DON'T WORK with " + expr + "   [" + base + "]");
+		}
+	},
+
 	make_base()
 	{
 		let	chars = "0123456789ABCDEF";
