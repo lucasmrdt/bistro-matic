@@ -12,9 +12,9 @@
 stack_elem_t	*get_elem_nbr(char **str)
 {
 	stack_elem_t	*nbr;
-	char		sign;
-	char		*value  = get_nbr(str, &sign);
-	int		length = my_strlen(value);
+	char	sign;
+	char	*value = get_nbr(str, &sign);
+	int	length = my_strlen(value);
 
 	nbr = malloc(sizeof(*nbr));
 	if (!nbr)

@@ -7,7 +7,7 @@
  
 #include "bistromatic.h"
 
-int  get_weight(char op)
+int	get_weight(char op)
 {
 	int	i = -1;
 
