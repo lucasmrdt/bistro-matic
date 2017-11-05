@@ -29,8 +29,7 @@ int verif_parenthese_number(char *str)
 			    || str[i + 1] == OPS[OP_MOD_IDX] ) {
 			} else {
 				my_putstr(SYNTAX_ERROR_MSG);
-				return (84);
-//		exit(EXIT_SYNTAX);
+				exit(EXIT_SYNTAX);
 			}
 		}
 		i += 1;

@@ -16,9 +16,10 @@ Test(Test_one, digit_par)
 
 	cr_assert(verif_digit_par(str) == 84, "Err in 123(4)");
 }
+
 Test(Test_two, digit_par)
 {
-	char *str = "12+(124)";
+	char *str = "77+(123)";
 
 	cr_assert(verif_digit_par(str) == 0, "Err in 123+(4)");
 }
