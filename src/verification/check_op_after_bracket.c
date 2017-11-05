@@ -9,6 +9,10 @@
 #include "my.h"
 #include "bistromatic.h"
 
+/*
+** Check if it is an operator just after a bracket.
+** If no, return the SYNTAXE_ERROR_MSG.
+*/
 int	check_op_after_open_bracket(char *str)
 {
 	if (*str == OPS[OP_OPEN_PARENT_IDX])

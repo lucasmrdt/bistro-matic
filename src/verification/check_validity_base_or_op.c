@@ -9,6 +9,10 @@
 #include "my.h"
 #include "bistromatic.h"
 
+/*
+** Check if the same char is in BASE and in OPS.
+** If yes, return the SYNTAX_ERROR_MSG.
+*/
 int	check_validity_base_or_op(char *str)
 {
 	int	i = 0;

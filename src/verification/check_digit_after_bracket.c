@@ -9,6 +9,10 @@
 #include "my.h"
 #include "bistromatic.h"
 
+/*
+** Check if it is a digit just after a bracket.
+** If yes, return the SYNTAX_ERROR_MSG.
+*/
 int check_digit_after_bracket(char *str)
 {
 	if (*str == OPS[OP_CLOSE_PARENT_IDX])

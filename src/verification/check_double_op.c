@@ -9,6 +9,11 @@
 #include "bistromatic.h"
 #include "stdlib.h"
 
+/*
+** Check two operators (only *,/ and %) follow
+** each other. If yes, return the SYNTAX_ERROR_MSG.
+** Examples: 1+--1 -> OK but 1**1 -> Error.
+*/
 int	check_double_op(char *str)
 {
 	if (is_op(*str) && !is_bracket(*str))

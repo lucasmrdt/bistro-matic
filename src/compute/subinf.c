@@ -11,6 +11,9 @@
 
 int	r_subinf(char *s1, char *s2, char *result, int rest);
 
+/*
+** subinf function, s1 > s2 and the result is return in a string.
+*/
 char	*subinf(char *s1, char *s2)
 {
 	char	*result;
@@ -31,7 +34,9 @@ char	*subinf(char *s1, char *s2)
 	return (result);
 }
 
-
+/*
+** Recursive function for subinf.
+*/
 int	r_subinf(char *s1, char *s2, char *res_computed, int rest)
 {
 	int	base_length = my_strlen(BASE);

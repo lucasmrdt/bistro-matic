@@ -7,6 +7,11 @@
 
 #include "bistromatic.h"
 
+/*
+** Check if the number of open brackets and the
+** number of close brackets are the same.
+** If no, return the SYNTAX_ERROR_MSG.
+*/
 void	check_syntax(char *str)
 {
 	int	i;
@@ -25,5 +30,5 @@ void	check_syntax(char *str)
 	}
 	check_last_char(*(str - 1));
 	if (nb_brackets)
-		display_error(SYNTAX_ERROR_MSG);	
+		display_error(SYNTAX_ERROR_MSG);
 }

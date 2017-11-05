@@ -9,6 +9,10 @@
 #include "my.h"
 #include "bistromatic.h"
 
+/*
+** Check if the first char is an integer.
+** If no, return the SYNTAX_ERROR_MSG.
+*/
 int	check_first_char(char c)
 {
 	if (is_high_op(c) && c != OPS[OP_OPEN_PARENT_IDX])

@@ -11,6 +11,10 @@
 
 int	r_addinf(char *s1, char *s2, char *result, int rest);
 
+/*
+** addinf function, s1 > s2 and the result is return
+** in a string.
+*/
 char	*addinf(char *s1, char *s2)
 {
 	char	*result;
@@ -31,6 +35,9 @@ char	*addinf(char *s1, char *s2)
 	return (result);
 }
 
+/*
+** Recursive function for addinf.
+*/
 int	r_addinf(char *s1, char *s2, char *result, int rest)
 {
 	int	n1 = (*s1 ? indexof(BASE, *s1) : 0);

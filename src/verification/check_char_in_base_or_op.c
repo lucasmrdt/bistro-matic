@@ -7,6 +7,10 @@
 
 #include "bistromatic.h"
 
+/*
+** Verif function for check if the character is
+** in the BASE or in the OPS (operators).
+*/
 int	check_char_in_base_or_op(char *str)
 {
 	if (!is_op(*str) && !is_nbr(*str))

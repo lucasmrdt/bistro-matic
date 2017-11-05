@@ -9,6 +9,14 @@
 #include "bistromatic.h"
 #include "my.h"
 
+/*
+** Check if the number of arguments are the good number.
+** If not, return the SYNTAX_ERROR_MSG.
+** Check if the calcul stock at least 2 characters.
+** If not, return the SYNTAX_ERROR_MSG.
+** Check is the length of OPS = 7.
+** If not, return the SYNTAX_ERROR_MSG.
+*/
 void	check_error(int ac, char **av)
 {
 	if (ac != 4) {
