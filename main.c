@@ -17,8 +17,8 @@ int	main(int ac, char **av)
 	unsigned int	size;
 	char		*expr;
 
-	initialize(av[1], av[2]);
 	check_error(ac, av);
+	initialize(av[1], av[2]);
 	size = my_getnbr(av[3]);
 	expr = get_expr(size);
 	check_syntax(expr);
