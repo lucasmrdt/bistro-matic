@@ -11,15 +11,14 @@ SRC	=	$(ORIGIN)/src/display_error.c	\
 		global/compare_str.c	\
 		syntax_verification/par_digit_test.c	\
 		syntax_verification/base_op_test.c	\
-		syntax_verification/test_source/verif_digit_par.c	\
-		syntax_verification/test_source/verif_first_carac.c	\
-		syntax_verification/test_source/verif_last_carac.c	\
-		syntax_verification/test_source/check_char_base.c	\
-		syntax_verification/test_source/verif_carac_after_bracket.c	\
-		syntax_verification/test_source/verif_nb_bracket.c	\
-		syntax_verification/test_source/verif_bracket_after_ops.c	\
-		syntax_verification/test_source/verif_parentheses_number.c	\
-		syntax_verification/test_source/verif_doublecarac.c	\
+		syntax_verification/test_source/check_syntax.c	\
+		syntax_verification/test_source/check_char_in_base_or_op.c	\
+		syntax_verification/test_source/check_last_char.c	\
+		syntax_verification/test_source/check_digit_after_bracket.c	\
+		syntax_verification/test_source/check_first_char.c	\
+		syntax_verification/test_source/check_op_after_bracket.c	\
+		syntax_verification/test_source/check_double_op.c	\
+		syntax_verification/test_source/check_digit_before_bracket.c	\
 		syntax_verification/mult_par_test.c	\
 		syntax_verification/digit_par_test.c
 
