@@ -5,6 +5,12 @@
 ** verif syntax
 */
 
+#include "my.h"
+#include "bistromatic.h"
+#include <stdlib.h>
+
+char	*OPS = "()+-*/%";
+
 int	verif_bracket_after_op(char *str)
 {
 	int	i = 0;
@@ -21,5 +27,6 @@ int	verif_bracket_after_op(char *str)
 		if (!ops[j])
 			j = 2;
 		i++;
+	}
 	return (0);
 }
