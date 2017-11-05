@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include "bistromatic.h"
+#include "my.h"
 
 char	*fill_nbr(char *tmp, int length);
 

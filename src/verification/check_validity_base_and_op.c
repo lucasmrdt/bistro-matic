@@ -26,4 +26,5 @@ int	check_validity_base_and_op(char *base, char *ops)
 		}
 		base++;
 	}
+	return (0);
 }
