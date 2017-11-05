@@ -5,6 +5,12 @@
 ** verif nb bracket
 */
 
+#include "my.h"
+#include "bistromatic.h"
+#include <stdlib.h>
+
+char	*OPS = "()+-*/%";
+
 int     verif_nb_bracket(char *str)
 {
 	int	i = 0;
