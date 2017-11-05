@@ -9,8 +9,8 @@ ORIGIN	=	../..
 
 TO_TEST_FOLDER	=	tests/c_tests
 
-SRC	=	$(ORIGIN)/$(TO_TEST_FOLDER)/digit_par_test.c \
-		$(ORIGIN)/tests/test_source/verif_digit_par.c
+SRC	=	$(ORIGIN)/$(TO_TEST_FOLDER)/par_digit_test.c \
+		$(ORIGIN)/tests/test_source/verif_parentheses_number.c
 
 OBJ	=	$(SRC:.c=.o)
 
