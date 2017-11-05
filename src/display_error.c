@@ -11,6 +11,6 @@
 
 void	display_error(char *msg)
 {
-	my_putstr(msg);
+	write(2, msg, my_strlen(msg));
 	exit(84);
 }
