@@ -19,10 +19,8 @@ char	*modinf(char *s1, char *s2)
 	int	length_s1 = my_strlen(s1);
 	int	length_s2 = my_strlen(s2);
 
-	n = malloc(sizeof(char) * (length_s2 + 1));
-	n[0] = '\0';
+	n = malloc(sizeof(char) * (length_s1 + 1));
 	q = malloc(sizeof(char) * (length_s1 + 1));
-	q[0] = '\0';
 	my_memset(n, '\0', length_s1);
 	my_memset(q, '\0', length_s1);
 	n = r_divinf(s1, s2, n, q);
