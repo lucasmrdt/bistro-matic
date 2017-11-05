@@ -18,9 +18,9 @@ int verif_parenthese_number(char *str)
 	int i = 0;
 
 	while (str[i]) {
-		while (str[i] != ')' && str[i])
+		while (str[i] != OPS[OP_CLOSE_PARENT_IDX] && str[i])
 			i++;
-		if (str[i] == ')') {
+		if (str[i] == OPS[OP_CLOSE_PARENT_IDX]) {
 			if (str[i + 1] == OPS[OP_CLOSE_PARENT_IDX] 
 			    || str[i + 1] == OPS[OP_PLUS_IDX]
 			    || str[i + 1] == OPS[OP_SUB_IDX]
