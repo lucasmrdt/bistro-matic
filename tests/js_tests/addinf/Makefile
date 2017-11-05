@@ -30,6 +30,7 @@ SRC	=	$(ORIGIN)/tests/js_tests/addinf/main.c	\
 		$(ORIGIN)/src/verification/check_first_char.c	\
 		$(ORIGIN)/src/verification/check_op_after_bracket.c	\
 		$(ORIGIN)/src/verification/check_double_op.c	\
+		$(ORIGIN)/src/verification/check_double_bracket.c	\
 		$(ORIGIN)/src/verification/check_digit_before_bracket.c
 
 OBJ	=	$(SRC:.c=.o)
