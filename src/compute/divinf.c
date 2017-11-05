@@ -44,6 +44,8 @@ char	*r_divinf(char *s1, char *s2, char *n, char *q)
 	}
 	while(compare_str(n, s2) >= 0) {
 		n = subinf(n, s2);
+		if (*n == BASE[0])
+			*n = 0;
 		my_revstr(s2);
 		qtmp++;
 	}
