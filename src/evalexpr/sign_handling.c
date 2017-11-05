@@ -52,7 +52,7 @@ char	*c_mul(stack_elem_t *elem1, stack_elem_t *elem2, char *sign)
 char	*c_div(stack_elem_t *elem1, stack_elem_t *elem2, char *sign)
 {
 	if (*(elem2->value) == BASE[0])
-		exit(EXIT_USAGE);
+		display_error(ERROR_MSG);
 	if (elem1->sign == elem2->sign)
 		*sign = OPS[OP_PLUS_IDX];
 	else
@@ -63,7 +63,7 @@ char	*c_div(stack_elem_t *elem1, stack_elem_t *elem2, char *sign)
 char	*c_mod(stack_elem_t *elem1, stack_elem_t *elem2, char *sign)
 {
 	if (*(elem2->value) == BASE[0])
-		exit(EXIT_USAGE);
+		display_error(ERROR_MSG);
 	*sign = elem1->sign;
 	return (modinf(elem1->value, elem2->value));
 }

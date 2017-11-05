@@ -20,6 +20,7 @@ verif_pfunc_t		VERIF_ARR[] = {&check_op_after_open_bracket,
 					&check_digit_after_bracket,
 					&check_double_op,
 					&check_char_in_base_or_op,
+					&check_double_bracket,
 					NULL};
 
 void	initialize(char *base, char *ops)
