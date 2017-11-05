@@ -18,7 +18,7 @@ int	verif_first_carac(char *str)
 	while (OPS[i]) {
 		if (str[0] == OPS[i] || str[0] == OPS[OP_CLOSE_PARENT_IDX]) {
 			my_putstr(SYNTAX_ERROR_MSG);
-			return (EXIT_SYNTAX);
+			exit(EXIT_SYNTAX);
 		}
 		i++;
 	}

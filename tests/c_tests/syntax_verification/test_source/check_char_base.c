@@ -5,18 +5,13 @@
 ** check if the char is in the base or not
 */
 
-#include "my.h"
 #include "bistromatic.h"
 
 int	check_char_base(char *str)
 {
 	int i = 0; 
 
-	while (str[i]) {
-		if (str[i] != is_base && str[i] != is_op) {
-			my_putstr(SYNTAX_ERROR_MSG);
-				return (EXIT_BASE);
-		}
-		i += 1; 
-	}
+	if (!is_op(*str) && !is_nbr(*str))
+		return (84);
+	return (0);
 }

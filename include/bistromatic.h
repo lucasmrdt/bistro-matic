@@ -58,7 +58,7 @@ char	*c_mod(stack_elem_t *elem1, stack_elem_t *elem2, char *sign);
 void	initialize(char *base, char *ops);
 void	initialize_stacks();
 void	initialize_global_var(char *base, char *ops);
-void	display_error(char *msg, int exit_error);
+void	display_error(char *msg);
 
 /* evalexpr */
 char	*eval_expr(char *str);
@@ -69,6 +69,9 @@ void	next_nb(void);
 void	add_nb(stack_elem_t *nb);
 void	add_op(stack_elem_t *op);
 void	remove_after_compute(void);
+
+/* verification syntax */
+
 
 /* evalexpr tools */
 char	*char_to_str(char c);
