@@ -9,8 +9,6 @@
 
 int	check_char_in_base_or_op(char *str)
 {
-	int i = 0; 
-
 	if (!is_op(*str) && !is_nbr(*str))
 		display_error(SYNTAX_ERROR_MSG);
 	return (0);

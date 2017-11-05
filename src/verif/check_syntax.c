@@ -7,13 +7,13 @@
 
 #include "bistromatic.h"
 
-void	verif_error(char *str)
+void	check_error(char *str)
 {
 	int	i;
 	int	nb_brackets = 0;
 
-	verif_first_char(*str);
-	while (*(str + 1)) {
+	check_first_char(*str);
+	while (*str) {
 		i = -1;
 		while (VERIF_ARR[++i])
 			VERIF_ARR[i](str);
@@ -23,5 +23,7 @@ void	verif_error(char *str)
 			nb_brackets--;
 		str++;
 	}
-	verif_last_char(*str);
+	check_last_char(*(str - 1));
+	if (nb_brackets)
+		display_error(SYNTAX_ERROR_MSG);	
 }

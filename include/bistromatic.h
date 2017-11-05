@@ -40,7 +40,8 @@ typedef struct stack_elem {
 	struct stack_elem	*next;
 } stack_elem_t;
 
-typedef char *(*pfunc_t)(stack_elem_t *elem1, stack_elem_t *elem2, char *sign);
+typedef char *(*compute_pfunc_t)(stack_elem_t *elem1, stack_elem_t *elem2, char *sign);
+typedef int(*verif_pfunc_t)(char *str);
 
 /* compute functions */
 char	*addinf(char *nb1, char *nb2);
@@ -71,7 +72,13 @@ void	add_op(stack_elem_t *op);
 void	remove_after_compute(void);
 
 /* verification syntax */
-
+int	check_op_after_open_bracket(char *str);
+int	check_digit_before_bracket(char *str);
+int	check_digit_after_bracket(char *str);
+int	check_last_char(char c);
+int	check_first_char(char c);
+int	check_double_op(char *str);
+int	check_char_in_base_or_op(char *str);
 
 /* evalexpr tools */
 char	*char_to_str(char c);
@@ -96,8 +103,8 @@ int	get_number(char **str);
 extern	char		*OPS;
 extern	char		*BASE;
 extern	int		BASE_LENGTH;
-extern	pfunc_t		COMPUTE_ARR[];
-extern	stack_elem_t	*STACK_NB;
+extern	compute_pfunc_t	COMPUTE_ARR[];
+extern	verif_pfunc_t	VERIF_ARR[];
 extern	stack_elem_t	*STACK_OP;
 
 #endif /* !BISTROMATIC_H_ */

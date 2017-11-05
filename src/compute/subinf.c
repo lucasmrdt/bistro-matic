@@ -18,7 +18,9 @@ char	*subinf(char *s1, char *s2)
 	int	length;
 
 	result = malloc(sizeof(char) * (length_s1 + 1));
-	my_memset(result, 0, length_s1);
+	if (!result)
+		return (NULL);
+	my_memset(result, 0, length_s1 + 1);
 	my_revstr(s1);
 	my_revstr(s2);
 	r_subinf(s1, s2, result, 0);

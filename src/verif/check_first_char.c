@@ -12,6 +12,6 @@
 int	check_first_char(char c)
 {
 	if (is_high_op(c) && c != OPS[OP_OPEN_PARENT_IDX])
-		display_error(SYNTAX_ERROR_MSG, EXIT_SYNTAX);
+		display_error(SYNTAX_ERROR_MSG);
 	return (0);
 }

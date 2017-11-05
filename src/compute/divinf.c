@@ -19,8 +19,8 @@ char	*divinf(char *s1, char *s2)
 
 	n = malloc(sizeof(char) * (length_s1 + 1));
 	q = malloc(sizeof(char) * (length_s1 + 1));
-	my_memset(n, '\0', length_s1);
-	my_memset(q, '\0', length_s1);
+	my_memset(n, '\0', length_s1 + 1);
+	my_memset(q, '\0', length_s1 + 1);
 	r_divinf(s1, s2, n, q);
 	return (q);
 }
