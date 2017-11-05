@@ -45,8 +45,6 @@ void	initialize_global_var(char *base, char *ops)
 	const int	ops_length = my_strlen(ops);
 
 	BASE_LENGTH = my_strlen(base);
-	if (ops_length != 7)
-		exit(EXIT_MALLOC);
 	OPS = malloc(sizeof(char) * ops_length);
 	if (!OPS)
 		exit(EXIT_MALLOC);

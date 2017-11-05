@@ -32,9 +32,7 @@ void	compute(void)
 	elem2 = STACK_NB;
 	elem1 = STACK_NB->next;
 	while (OPS[++i] != *(STACK_OP->value));
-	printf("%c%s %c %c%s = ", elem1->sign, elem1->value, OPS[i], elem2->sign, elem2->value);
 	STACK_NB->next->value = (COMPUTE_ARR[i - 2])(elem1, elem2, &sign);
 	STACK_NB->next->sign = sign;
-	printf("%c%s\n", STACK_NB->next->sign, STACK_NB->next->value);
 	remove_after_compute();
 }

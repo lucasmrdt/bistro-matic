@@ -79,6 +79,9 @@ int	check_last_char(char c);
 int	check_first_char(char c);
 int	check_double_op(char *str);
 int	check_char_in_base_or_op(char *str);
+int	check_validity_base_op(char *str);
+void	check_syntax(char *str);
+void	check_error(int ac, char **av);
 
 /* evalexpr tools */
 char	*char_to_str(char c);
@@ -106,5 +109,6 @@ extern	int		BASE_LENGTH;
 extern	compute_pfunc_t	COMPUTE_ARR[];
 extern	verif_pfunc_t	VERIF_ARR[];
 extern	stack_elem_t	*STACK_OP;
+extern	stack_elem_t	*STACK_NB;
 
 #endif /* !BISTROMATIC_H_ */

@@ -8,7 +8,7 @@
 ## SOURCES
 SRC_PRG		=	main.c	\
 			src/initialize.c	\
-			src/error.c	\
+			src/display_error.c	\
 			src/compute/divinf.c	\
 			src/compute/modinf.c	\
 			src/compute/subinf.c	\
@@ -29,7 +29,17 @@ SRC_PRG		=	main.c	\
 			src/evalexpr/tools/set_bigger_first.c	\
 			src/evalexpr/tools/get_elem_nbr.c	\
 			src/evalexpr/tools/get_elem_op.c	\
-			src/evalexpr/tools/is_op.c
+			src/evalexpr/tools/is_op.c	\
+			src/verification/check_char_in_base_or_op.c	\
+			src/verification/check_error.c	\
+			src/verification/check_last_char.c	\
+			src/verification/check_digit_after_bracket.c	\
+			src/verification/check_first_char.c	\
+			src/verification/check_syntax.c	\
+			src/verification/check_op_after_bracket.c	\
+			src/verification/check_double_op.c	\
+			src/verification/check_digit_before_bracket.c	\
+			src/verification/check_validity_base_op.c
 
 OBJ_PRG		=	$(SRC_PRG:.c=.o)
 

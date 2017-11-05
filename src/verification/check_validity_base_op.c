@@ -9,24 +9,18 @@
 #include "my.h"
 #include "bistromatic.h"
 
-int	same_carac(char *str)
+int	check_validity_base_op(char *str)
 {
 	unsigned	i = 0;
-	unsigned	j = 0;
+	unsigned	j;
 
 	while (str[i]) {
+		j = 0;
 		while (str[i] != str[j] && i != j && str[j])
 			j++;
-		if (str[j] && str[i] == str[j])
+		if (str[j] && str[i] == str[j] && i != j)
 			display_error(SYNTAX_ERROR_MSG);
-		j = 0;
 		i++;
 	}
 	return (0);
-}
-
-int	main(void)
-{
-	str[] = "321";
-	same_carac(str);
 }

@@ -7,7 +7,7 @@
 
 #include "bistromatic.h"
 
-void	check_error(char *str)
+void	check_syntax(char *str)
 {
 	int	i;
 	int	nb_brackets = 0;

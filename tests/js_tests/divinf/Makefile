@@ -23,14 +23,14 @@ SRC	=	$(ORIGIN)/tests/js_tests/divinf/main.c	\
 		$(ORIGIN)/src/evalexpr/tools/is_low_op.c	\
 		$(ORIGIN)/src/evalexpr/tools/is_nbr.c	\
 		$(ORIGIN)/src/evalexpr/tools/is_op.c	\
-		$(ORIGIN)/src/verif/check_syntax.c	\
-		$(ORIGIN)/src/verif/check_char_in_base_or_op.c	\
-		$(ORIGIN)/src/verif/check_last_char.c	\
-		$(ORIGIN)/src/verif/check_digit_after_bracket.c	\
-		$(ORIGIN)/src/verif/check_first_char.c	\
-		$(ORIGIN)/src/verif/check_op_after_bracket.c	\
-		$(ORIGIN)/src/verif/check_double_op.c	\
-		$(ORIGIN)/src/verif/check_digit_before_bracket.c
+		$(ORIGIN)/src/verification/check_syntax.c	\
+		$(ORIGIN)/src/verification/check_char_in_base_or_op.c	\
+		$(ORIGIN)/src/verification/check_last_char.c	\
+		$(ORIGIN)/src/verification/check_digit_after_bracket.c	\
+		$(ORIGIN)/src/verification/check_first_char.c	\
+		$(ORIGIN)/src/verification/check_op_after_bracket.c	\
+		$(ORIGIN)/src/verification/check_double_op.c	\
+		$(ORIGIN)/src/verification/check_digit_before_bracket.c
 
 OBJ	=	$(SRC:.c=.o)
 

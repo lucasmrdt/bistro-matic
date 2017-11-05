@@ -34,6 +34,7 @@ char	*eval_expr(char *str)
 	}
 	while (STACK_OP->value)
 		compute();
-	printf("res : %c%s\n", STACK_NB->sign, STACK_NB->value);
-	return ("ok");
+	if (STACK_NB->sign == OPS[OP_NEG_IDX])
+		my_putchar(OPS[OP_NEG_IDX]);
+	return (STACK_NB->value);
 }
