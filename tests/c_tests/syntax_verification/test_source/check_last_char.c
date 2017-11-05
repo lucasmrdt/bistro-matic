@@ -9,9 +9,9 @@
 #include "my.h"
 #include "bistromatic.h"
 
-int	check_last_char(char *str)
+int	check_last_char(char c)
 {
-	if (is_high_op(c) && c != OPS[OP_CLOSE_PARENT_IDX])
-		display_error(SYNTAX_ERROR_MSG, EXIT_SYNTAX);
+	if (is_op(c) && c != OPS[OP_CLOSE_PARENT_IDX])
+		return (84);
 	return (0);
 }

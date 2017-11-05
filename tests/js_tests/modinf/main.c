@@ -13,6 +13,6 @@ int	main(int ac, char **av)
 	char	ops[] = "()+-/*\%";
 
 	(void)(ac);
-	initialize(ops, av[1]);
+	initialize(av[1], ops);
 	printf("%s\n", modinf(av[2], av[3]));
 }

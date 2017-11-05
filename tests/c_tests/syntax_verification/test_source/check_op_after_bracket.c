@@ -13,6 +13,6 @@ int	check_op_after_open_bracket(char *str)
 {
 	if (*str == OPS[OP_OPEN_PARENT_IDX])
 		if (is_high_op(*(str + 1)) && *(str + 1) != OPS[OP_OPEN_PARENT_IDX])
-			display_error(SYNTAX_ERROR_MSG);
+			return (84);
 	return (0);
 }

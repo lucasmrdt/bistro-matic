@@ -13,6 +13,6 @@ int check_digit_after_bracket(char *str)
 {
 	if (*str == OPS[OP_CLOSE_PARENT_IDX])
 		if (is_nbr(*(str + 1)))
-			display_error(SYNTAX_ERROR_MSG);
+			return (84);
 	return (0);
 }

@@ -7,7 +7,7 @@
 
 ORIGIN	=	../../..
 
-SRC	=	$(ORIGIN)/tests/js_tests/modinf/main.c	\
+SRC	=	main.c	\
 		$(ORIGIN)/src/display_error.c	\
 		$(ORIGIN)/src/initialize.c	\
 		$(ORIGIN)/src/compute/addinf.c	\
@@ -23,20 +23,20 @@ SRC	=	$(ORIGIN)/tests/js_tests/modinf/main.c	\
 		$(ORIGIN)/src/evalexpr/tools/is_low_op.c	\
 		$(ORIGIN)/src/evalexpr/tools/is_nbr.c	\
 		$(ORIGIN)/src/evalexpr/tools/is_op.c	\
-		$(ORIGIN)/src/verif/check_syntax.c	\
-		$(ORIGIN)/src/verif/check_char_in_base_or_op.c	\
-		$(ORIGIN)/src/verif/check_last_char.c	\
-		$(ORIGIN)/src/verif/check_digit_after_bracket.c	\
-		$(ORIGIN)/src/verif/check_first_char.c	\
-		$(ORIGIN)/src/verif/check_op_after_bracket.c	\
-		$(ORIGIN)/src/verif/check_double_op.c	\
-		$(ORIGIN)/src/verif/check_digit_before_bracket.c
+		test_source/check_syntax.c	\
+		test_source/check_char_in_base_or_op.c	\
+		test_source/check_last_char.c	\
+		test_source/check_digit_after_bracket.c	\
+		test_source/check_first_char.c	\
+		test_source/check_op_after_bracket.c	\
+		test_source/check_double_op.c	\
+		test_source/check_digit_before_bracket.c
 
 OBJ	=	$(SRC:.c=.o)
 
 CFLAGS	=	-I$(ORIGIN)/include -Wall -Wextra
 
-LDFLAGS	=	-L$(ORIGIN)/lib/my -lmy
+LDFLAGS	=	-L$(ORIGIN)/lib/my -lmy -lcriterion
 
 CC	=	gcc
 
@@ -45,7 +45,7 @@ NAME	=	test
 
 $(NAME):	$(OBJ)
 	$(MAKE) -C 	$(ORIGIN)/lib/my
-	$(CC) -o 	$(NAME) $(OBJ) $(LDFLAGS)
+	$(CC) -o 	$(NAME) -I../../include $(OBJ) $(LDFLAGS)
 	$(MAKE) 	clean
 
 all:		$(NAME)

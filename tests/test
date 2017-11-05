@@ -1,27 +1,18 @@
-echo "[criterion]"
-cd c_tests
-./test
-echo ""
-echo ""
-cd ..
+#!/bin/bash
 
 echo "[nodejs]"
 cd js_tests/addinf
 node addinf.js
 cd ../..
-
 cd js_tests/subinf
 node subinf.js
 cd ../..
-
 cd js_tests/mulinf
 node mulinf.js
 cd ../..
-
 cd js_tests/divinf
 node divinf.js
 cd ../..
-
 cd js_tests/modinf
 node modinf.js
 cd ../..
