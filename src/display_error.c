@@ -6,6 +6,7 @@
 */
 
 #include "my.h"
+#include <stdlib.h>
 
 void	display_error(char *msg)
 {
