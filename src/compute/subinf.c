@@ -14,7 +14,7 @@ int	r_subinf(char *s1, char *s2, char *result, int rest);
 char	*subinf(char *s1, char *s2)
 {
 	char	*result;
-	int	length_s1 = my_strlen(s1);
+	int	length_s1 = my_strlen(s1) * 2;
 	int	length;
 
 	result = malloc(sizeof(char) * (length_s1 + 1));
