@@ -9,7 +9,7 @@
 #include "my.h"
 #include "bistromatic.h"
 
-int	validate_base_and_ops(char *base, char *ops)
+int	check_validity_base_and_op(char *base, char *ops)
 {
 	int	i;
 

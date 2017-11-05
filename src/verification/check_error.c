@@ -21,4 +21,7 @@ void	check_error(int ac, char **av)
 		display_error(SYNTAX_ERROR_MSG);
 	if (my_strlen(av[2]) != 7)
 		display_error(SYNTAX_ERROR_MSG);
+	check_validity_base_or_op(av[1]);
+	check_validity_base_or_op(av[2]);
+	check_validity_base_and_op(av[1], av[2]);
 }

@@ -35,14 +35,14 @@ char	*r_divinf(char *s1, char *s2, char *n, char *q)
 		q[my_strlen(q)] = '\0';
 		return (n);
 	}
-	while (compare_str(n, s2) < 0 && *s1 && run) {
+	while (compare_str(n, s2, BASE) < 0 && *s1 && run) {
 		length = my_strlen(n);
 		n[length] = *s1;
 		s1++;
 		if (*q)
 			run = 0;
 	}
-	while(compare_str(n, s2) >= 0) {
+	while(compare_str(n, s2, BASE) >= 0) {
 		n = subinf(n, s2);
 		if (*n == BASE[0])
 			*n = 0;

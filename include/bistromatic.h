@@ -79,7 +79,8 @@ int	check_last_char(char c);
 int	check_first_char(char c);
 int	check_double_op(char *str);
 int	check_char_in_base_or_op(char *str);
-int	check_validity_base_op(char *str);
+int	check_validity_base_or_op(char *str);
+int	check_validity_base_and_op(char *base, char *ops);
 void	check_syntax(char *str);
 void	check_error(int ac, char **av);
 

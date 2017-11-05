@@ -39,7 +39,8 @@ SRC_PRG		=	main.c	\
 			src/verification/check_op_after_bracket.c	\
 			src/verification/check_double_op.c	\
 			src/verification/check_digit_before_bracket.c	\
-			src/verification/check_validity_base_op.c
+			src/verification/check_validity_base_or_op.c	\
+			src/verification/check_validity_base_and_op.c
 
 OBJ_PRG		=	$(SRC_PRG:.c=.o)
 

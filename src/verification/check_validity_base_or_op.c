@@ -9,10 +9,10 @@
 #include "my.h"
 #include "bistromatic.h"
 
-int	check_validity_base_op(char *str)
+int	check_validity_base_or_op(char *str)
 {
-	unsigned	i = 0;
-	unsigned	j;
+	int	i = 0;
+	int	j;
 
 	while (str[i]) {
 		j = 0;

@@ -16,6 +16,6 @@ char	*my_strdup(char const *src);
 char	*my_revstr(char *str);
 int	indexof(char *arr, char c);
 void	my_memset(char *result, char c, int length);
-int	compare_str(char *s1, char *s2);
+int	compare_str(char *s1, char *s2, char *arr);
 
 #endif
