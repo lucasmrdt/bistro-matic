@@ -8,10 +8,6 @@
 #include <stdbool.h>
 #include "bistromatic.h"
 
-/*
-** patern //%*()/
-*/
-
 int	is_high_op(char c)
 {
 	if (!is_low_op(c) && !is_nbr(c))
