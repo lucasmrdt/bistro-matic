@@ -11,52 +11,31 @@
 
 int my_putstr(char const *);
 
-char	*OPS = "()+-*/%";
-	
+char    *OPS = "()+-*/%";
+
 int verif_parenthese_number(char *str)
 {
 	int i = 0;
 
 	while (str[i]) {
-		while (str[i] != ')' && str[i])
+		while (str[i] != OPS[OP_CLOSE_PARENT_IDX] && str[i]) {
 			i++;
-		if (str[i] == ')') {
-			if (str[i + 1] == OPS[OP_CLOSE_PARENT_IDX] 
+			if (str[i] == '\0')
+                                return (0);
+		}
+		if (str[i] == OPS[OP_CLOSE_PARENT_IDX]) {
+			if (str[i + 1] == OPS[OP_CLOSE_PARENT_IDX]
 			    || str[i + 1] == OPS[OP_PLUS_IDX]
 			    || str[i + 1] == OPS[OP_SUB_IDX]
 			    || str[i + 1] == OPS[OP_MULT_IDX]
 			    || str[i + 1] == OPS[OP_DIV_IDX]
-			    || str[i + 1] == OPS[OP_MOD_IDX] ) {
+			    || str[i + 1] == OPS[OP_MOD_IDX]
+			    || str[i + 1] == OPS[OP_CLOSE_PARENT_IDX]) {
 			} else {
-				my_putstr(SYNTAX_ERROR_MSG);
-				exit(EXIT_SYNTAX);
+				display_error(SYNTAX_ERROR_MSG, EXIT_SYNTAX); 
 			}
 		}
-		i += 1;
-	}
-	return (0);
-}
-
-int verif_number_parenthese(char *str)
-{
-	int i = 0;
-
-	while (str[i]) {
-		while (str[i] != '(' && str[i])
-			i++;
-		if (str[i] == '(') {
-			if (str[i - 1] == OPS[OP_OPEN_PARENT_IDX]
-			    || str[i - 1] == OP_PLUS_IDX
-			    || str[i - 1] == OP_SUB_IDX
-			    || str[i - 1] == OP_MULT_IDX
-			    || str[i - 1] == OP_DIV_IDX
-			    || str[i - 1] == OP_MOD_IDX ) {
-			} else {
-				my_putstr(SYNTAX_ERROR_MSG);
-				exit(EXIT_SYNTAX);
-			}
-		}
-		i += 1;
+		i++;
 	}
 	return (0);
 }
