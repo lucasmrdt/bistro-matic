@@ -11,7 +11,7 @@
 stack_elem_t	*get_elem_op(char c)
 {
 	stack_elem_t	*op;
-	int		weight;
+	int		weight = 0;
 
 	if (!is_op(c))
 		exit(EXIT_READ);

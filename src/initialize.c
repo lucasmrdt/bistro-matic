@@ -38,6 +38,8 @@ void	initialize_stacks()
 	STACK_OP = malloc(sizeof(*STACK_OP));
 	if (!STACK_OP)
 		exit(EXIT_MALLOC);
+	STACK_OP->weight = 0;
+	STACK_OP->value = 0;
 	STACK_OP->next = NULL;
 }
 
